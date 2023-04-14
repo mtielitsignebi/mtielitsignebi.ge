@@ -3,17 +3,16 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <Layout title="home">
-      <div className="flex flex-1 justify-center">
-        <h1 className="text-white ">Welcome</h1>
-
+    <Layout title="Home">
+      <div className="flex min-h-screen justify-center items-center flex-col">
         <Image
-          src="/assets/image1.png"
-          width={390}
-          height={507}
+          src="/assets/logo.jpeg"
+          width={200}
+          height={200}
           alt="1"
           quality={30}
         />
+        <h1 className="text-gray-500">საიტი მალე დაემატება!</h1>
       </div>
     </Layout>
   );
