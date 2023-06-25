@@ -11,7 +11,7 @@ import { Facebook } from "../Facebook";
 import { PhoneWrapper } from "../PhoneWrapper";
 import styles from "./Footer.module.css";
 
-export const Footer = ({ style }) => {
+export const Footer = ({ style }: any) => {
   return (
     <div className={styles.footer} style={style}>
       <div className={styles.copyrights}>
