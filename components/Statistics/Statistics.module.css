@@ -1,0 +1,198 @@
+.statistics {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  justify-content: center;
+  padding: 0px 200px;
+  position: relative;
+  width: 100%;
+}
+
+.statistics .title {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.statistics .statisticsWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  position: relative;
+  width: fit-content;
+}
+
+.statistics .div3 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 96px;
+  position: relative;
+  width: 1280px;
+}
+
+.statistics .div4 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+.statistics .element11 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 62.4px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.statistics .element12 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 20.8px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 253px;
+}
+
+.statistics .span {
+  font-weight: 500;
+}
+
+.statistics .symbol {
+  font-weight: 700;
+}
+
+.statistics .div5 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+.statistics .element13 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 62.4px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.statistics .element14 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20.8px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 253px;
+}
+
+.statistics .div6 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+.statistics .element15 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 62.4px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.statistics .element16 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20.8px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 253px;
+}
+
+.statistics .div7 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+.statistics .element17 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 62.4px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.statistics .element18 {
+  color: #08385c;
+  font-family: "Noto Serif Georgian", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20.8px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 253px;
+}
+
+.statistics .map {
+  height: 424px;
+  min-width: 1280px;
+  position: relative;
+}

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "./Footer";
+// import { Footer } from "./Footer";
 
 type TLayout = {
   children: React.ReactNode;
@@ -18,9 +18,7 @@ export const Layout = ({ children, title }: TLayout) => {
 
       <div className="min-h-screen w-screen">{children}</div>
 
-      <div>
-        <Footer />
-      </div>
+      <div>{/* <Footer /> */}</div>
     </div>
   );
 };
