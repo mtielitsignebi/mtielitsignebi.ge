@@ -1,0 +1,15 @@
+.screen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div8 {
+  background-color: #ffffff;
+  border: 1px none;
+  height: 3715px;
+  position: relative;
+  width: 100%;
+}
