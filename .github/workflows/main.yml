@@ -66,6 +66,7 @@ jobs:
         with:
           branch: ${{ github.head_ref }}
           folder: build
+          target: development
 
   # Deployment - Production Environment
   deploy_production:
@@ -81,3 +82,4 @@ jobs:
         with:
           branch: main
           folder: build
+          target: production
