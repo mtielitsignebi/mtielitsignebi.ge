@@ -54,7 +54,7 @@ jobs:
           path: ./build
 
   # Deployment - Development Environment
-  deploy_pr:
+  deploy_development:
     environment:
       name: development
     runs-on: ubuntu-latest
@@ -68,7 +68,7 @@ jobs:
           folder: build
 
   # Deployment - Production Environment
-  deploy_main:
+  deploy_production:
     environment:
       name: production
     runs-on: ubuntu-latest
