@@ -15,7 +15,7 @@ export const HomeScreen = () => {
       <About />
       <Statistics />
       <Blog />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

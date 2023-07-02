@@ -1,11 +1,8 @@
-/*
-We're constantly improving the code you see. 
-Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-*/
-
 import React from "react";
 import { Button } from "../Button";
 import "./style.css";
+
+// TODO: install i18n for all text content and create translations.json file
 
 export const About = () => {
   return (
