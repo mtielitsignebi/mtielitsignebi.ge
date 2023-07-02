@@ -7,7 +7,7 @@ import { Hero } from "../../components/Hero";
 import { Statistics } from "../../components/Statistics";
 import "./style.css";
 
-export const HomeScreen = () => {
+export const HomePage = () => {
   return (
     <div className="Wrapper">
       <Header />
