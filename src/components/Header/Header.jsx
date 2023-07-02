@@ -4,6 +4,7 @@ import "./style.css";
 import { Logo } from "../../icons/Logo";
 
 // TODO: Replace Button with correct implementation
+// Make it responsive with hamburger icon
 
 export const Header = () => {
   return (
@@ -15,11 +16,11 @@ export const Header = () => {
         <div className="menu-item, menu-item-active">მთავარი</div>
         <div className="menu-item">ჩვენს შესახებ</div>
         <div className="menu-item">სიახლეები</div>
-        <Button
+        {/* <Button
           className="button-instance"
           requestAnEstimateClassName="design-component-instance-node"
           text="ავტორიზაცია"
-        />
+        />*/}
         <Button requestAnEstimateClassName="button-2" text="დონაცია" />
       </div>
     </div>
