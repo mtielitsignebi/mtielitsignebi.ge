@@ -7,10 +7,16 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./style.css";
 
-export const Button = ({ className, requestAnEstimateClassName, text = "დონაცია" }) => {
+export const Button = ({
+  className,
+  requestAnEstimateClassName,
+  text = "დონაცია",
+}) => {
   return (
     <div className={`button ${className}`}>
-      <div className={`request-an-estimate ${requestAnEstimateClassName}`}>{text}</div>
+      <div className={`request-an-estimate ${requestAnEstimateClassName}`}>
+        {text}
+      </div>
     </div>
   );
 };

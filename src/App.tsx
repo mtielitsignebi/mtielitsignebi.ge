@@ -1,9 +1,9 @@
-import { TestScreen } from "./screens/TestScreen";
+import { Screen } from "./screens/Screen";
 
 function App() {
   return (
     <div className="App">
-      <TestScreen />
+      <Screen />
     </div>
   );
 }

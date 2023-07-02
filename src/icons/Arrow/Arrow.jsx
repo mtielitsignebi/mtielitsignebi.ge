@@ -5,23 +5,23 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import React from "react";
 
-export const Menu = ({ className }) => {
+export const Arrow = ({ className }) => {
   return (
     <svg
-      className={`menu ${className}`}
+      className={`arrow-2 ${className}`}
       fill="none"
-      height="32"
-      viewBox="0 0 32 32"
-      width="32"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         className="path"
-        d="M5 9H27M5 16H27M5 23H27"
-        stroke="#08385C"
+        d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3"
+        stroke="white"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="2"
+        strokeWidth="1.5"
       />
     </svg>
   );

@@ -1,0 +1,18 @@
+.screen {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 3731px;
+  justify-content: space-between;
+  min-width: 1680px;
+  position: relative;
+}
+
+.screen .footer-instance {
+  border-bottom-style: none !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+  mix-blend-mode: normal !important;
+}
