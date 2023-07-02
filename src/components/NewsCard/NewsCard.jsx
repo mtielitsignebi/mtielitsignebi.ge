@@ -1,12 +1,9 @@
-/*
-We're constantly improving the code you see. 
-Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-*/
-
 import PropTypes from "prop-types";
 import React from "react";
 import { SliderContainer } from "../SliderContainer";
 import "./style.css";
+
+//TODO: fix this to be re-usable component
 
 export const NewsCard = ({
   className,
@@ -85,4 +82,6 @@ export const NewsCard = ({
 
 NewsCard.propTypes = {
   hasCompanies: PropTypes.bool,
+  className: PropTypes.string,
+  labelClassName: PropTypes.string,
 };
