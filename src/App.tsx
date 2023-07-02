@@ -12,7 +12,7 @@ function App() {
       <Router history={history}>
         <Routes>
           <Route path={"/"} element={<IntroPage />} />
-          <Route path={"/demo"} element={<HomePage />} />
+          <Route path={"/#/demo"} element={<HomePage />} />
         </Routes>
       </Router>
     </Provider>
