@@ -53,14 +53,31 @@ jobs:
         with:
           path: ./build
 
-  # Deployment
-  deploy:
+  # Deployment - Development Environment
+  deploy_pr:
+    environment:
+      name: development
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Deploy PR Preview
+        uses: actions/deploy-pages@v1
+        with:
+          branch: ${{ github.head_ref }}
+          folder: build
+
+  # Deployment - Production Environment
+  deploy_main:
     environment:
       name: production
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged)
     steps:
-      - name: Deploy to GitHub Pages
-        if: github.event_name != 'pull_request'
+      - name: Deploy to Production
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          branch: main
+          folder: build
