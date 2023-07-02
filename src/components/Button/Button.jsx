@@ -23,4 +23,6 @@ export const Button = ({
 
 Button.propTypes = {
   text: PropTypes.string,
+  className: PropTypes.string,
+  requestAnEstimateClassName: PropTypes.string,
 };
