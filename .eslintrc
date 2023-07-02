@@ -1,6 +1,8 @@
 {
   "extends": ["eslint:recommended"],
-  "ecmaVersion": 2015,
+  "parserOptions": {
+    "ecmaVersion": 2015
+  },
   "rules": {
     "no-anonymous-default-export": "off"
   }
