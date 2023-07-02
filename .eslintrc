@@ -5,6 +5,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-anonymous-default-export": "off"
+    "no-anonymous-default-export": "off",
+    "no-unused-vars": "off"
   }
 }
