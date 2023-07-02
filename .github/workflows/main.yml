@@ -55,7 +55,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          name: ${{ steps.set_artifact_name.outputs.artifact_name }}
+          name: |
+           if [ github.event_name == 'pull_request' ]; then 
+            ${{ steps.set_artifact_name.outputs.artifact_name }}
+           else
+            github-pages
           path: ./build
 
   # # Deployment - Development Environment
