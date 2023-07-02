@@ -2,6 +2,8 @@ import React from "react";
 import { SliderContainer } from "../SliderContainer";
 import "./style.css";
 
+// TODO: implement framer motion slider animation
+
 export const Hero = () => {
   return (
     <div className="section-hero">
