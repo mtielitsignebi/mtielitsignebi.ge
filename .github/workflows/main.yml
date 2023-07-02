@@ -48,25 +48,30 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: EndBug/add-and-commit@v7.0.0
 
+      - name: Set artifact name
+        id: set_artifact_name
+        run: echo "::set-output name=artifact_name::pr-${{ github.event.pull_request.number }}"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
+          name: ${{ steps.set_artifact_name.outputs.artifact_name }}
           path: ./build
 
-  # Deployment - Development Environment
-  deploy_development:
-    environment:
-      name: development
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'pull_request'
-    steps:
-      - name: Deploy PR Preview
-        uses: actions/deploy-pages@v1
-        with:
-          branch: ${{ github.head_ref }}
-          folder: build
-          target: development
+  # # Deployment - Development Environment
+  # deploy_development:
+  #   environment:
+  #     name: development
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   if: github.event_name == 'pull_request'
+  #   steps:
+  #     - name: Deploy PR Preview
+  #       uses: actions/deploy-pages@v1
+  #       with:
+  #         branch: ${{ github.head_ref }}
+  #         folder: build
+  #         target: development
 
   # Deployment - Production Environment
   deploy_production:
