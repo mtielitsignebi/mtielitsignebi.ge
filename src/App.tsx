@@ -1,9 +1,10 @@
-import { Screen } from "./screens/Screen";
+import { HomeScreen } from "./screens/HomeScreen";
 
 function App() {
+  // TODO: Implement react router and pass that instead of HomeScreen
   return (
     <div className="App">
-      <Screen />
+      <HomeScreen />
     </div>
   );
 }
