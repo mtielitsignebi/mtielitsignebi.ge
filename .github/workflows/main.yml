@@ -42,7 +42,7 @@ jobs:
       - name: Build
         run: |
           npm run build
-          touch ./out/.nojekyll
+          touch ./build/.nojekyll
 
       - name: Set status
         if: github.event_name == 'pull_request'
