@@ -1,10 +1,12 @@
-import { Statistics } from ".";
+import { SectionStatistics } from ".";
 
 export default {
-  title: "Components/Statistics",
-  component: Statistics,
+  title: "Components/SectionStatistics",
+  component: SectionStatistics,
 };
 
 export const Default = {
-  args: {},
+  args: {
+    className: {},
+  },
 };

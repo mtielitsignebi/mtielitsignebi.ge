@@ -1,13 +1,12 @@
-/*
-We're constantly improving the code you see. 
-Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-*/
-
 import React from "react";
 import { Button } from "../Button";
 import { NewsCard } from "../NewsCard";
 import { SliderContainer } from "../SliderContainer";
 import "./style.css";
+
+// TODO: Fix usage of NewsCard components and than rename it to be just BlogCard,
+// Create mock data object with different title, description and images and loop through that.
+// Implement "load more" action.
 
 export const Blog = () => {
   return (

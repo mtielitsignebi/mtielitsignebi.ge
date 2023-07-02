@@ -7,18 +7,15 @@ import { Hero } from "../../components/Hero";
 import { Statistics } from "../../components/Statistics";
 import "./style.css";
 
-export const Screen = () => {
+export const HomePage = () => {
   return (
-    <div className="screen">
+    <div className="Wrapper">
       <Header />
       <Hero />
       <About />
       <Statistics />
       <Blog />
-      <Footer
-        className="footer-instance"
-        href="https://www.facebook.com/mtieli.tsignebi/?locale=ms_MY"
-      />
+      <Footer />
     </div>
   );
 };

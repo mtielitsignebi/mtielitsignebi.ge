@@ -1,8 +1,3 @@
-/*
-We're constantly improving the code you see. 
-Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-*/
-
 import React from "react";
 import { Arrow } from "../../icons/Arrow";
 import { Envelope } from "../Envelope";
@@ -10,9 +5,11 @@ import { Facebook } from "../Facebook";
 import { PhoneWrapper } from "../PhoneWrapper";
 import "./style.css";
 
-export const Footer = ({ className, href }) => {
+// TODO: fix subscribe input field and make it responsive
+
+export const Footer = () => {
   return (
-    <div className={`footer ${className}`}>
+    <div className="footer">
       <div className="copyrights">
         <img
           className="logo-2"
@@ -39,7 +36,7 @@ export const Footer = ({ className, href }) => {
             <Facebook className="facebook-instance" />
             <a
               className="text-wrapper-3"
-              href={href}
+              href={""}
               rel="noopener noreferrer"
               target="_blank"
             >
