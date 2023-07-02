@@ -14,7 +14,7 @@ export const Header = () => {
       </div>
       <div className="container-end">
         <div className="menu-item, menu-item-active">მთავარი</div>
-        <div className="menu-item">ჩვენ შესახებ</div>
+        <div className="menu-item">ჩვენს შესახებ</div>
         <div className="menu-item">სიახლეები</div>
         {/* <Button
           className="button-instance"
