@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, HashRouter as Router } from "react-router-dom";
 import { HomePage } from "./pages/Home";
 import IntroPage from "./pages/Intro/IntroPage";
 import DonatePage from "./pages/Donate/DonatePage";
