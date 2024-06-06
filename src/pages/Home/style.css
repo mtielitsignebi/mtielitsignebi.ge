@@ -1,4 +1,4 @@
-.Wrapper {
+.home {
   display: flex;
   flex: 1;
   width: 100%;
@@ -6,5 +6,4 @@
   align-items: center;
   border: 1px none;
   background-color: #ffffff;
-  gap: 64px
 }
