@@ -3,15 +3,12 @@ name: pipeline
 on:
   pull_request:
     branches: [main]
-    types: [opened, synchronize]
-  push:
-    branches: [main]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
   pages: write
   id-token: write
-  pull-requests: write
 
 concurrency:
   group: "pages"
@@ -35,10 +32,7 @@ jobs:
       - name: Configure npm to use Etlyn organization's registry
         run: echo "@etlyn:registry=https://npm.pkg.github.com/" >> ~/.npmrc
 
-      - name: Debug - Display .npmrc
-        run: cat ~/.npmrc
-
-      - name: Install
+      - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
@@ -48,40 +42,25 @@ jobs:
             npm i
           fi
 
-      - name: Build
+      - name: Build the project
         run: |
           npm run build
           touch ./build/.nojekyll
 
-      - name: Set status
-        if: github.event_name == 'pull_request'
-        uses: EndBug/add-and-commit@v7.0.0
-
-      - name: Set artifact name
-        id: set_artifact_name
-        run: echo "::set-output name=artifact_name::pr-${{ github.event.pull_request.number }}"
-
-      - name: Prepare artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: ${{ github.event_name == 'pull_request' && steps.set_artifact_name.outputs.artifact_name || 'github-pages' }}
-          path: ./build
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          destination_dir: pr-preview/${{ github.event.pull_request.number }}
 
-      - name: Upload artifact to GitHub
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifact
-          path: ./build
-
-      - name: Comment on PR with artifact link
-        if: github.event_name == 'pull_request'
+      - name: Comment on PR with preview link
         uses: actions/github-script@v6
         with:
           script: |
-            const artifactName = '${{ steps.set_artifact_name.outputs.artifact_name }}';
-            const artifactUrl = `https://github.com/${{ github.repository_owner }}/${{ github.repository }}/suites/${{ github.run_id }}/artifacts`;
-            const prNumber = ${{ github.event.pull_request.number }};
-            const commentBody = `🚀 Build artifact for PR #${prNumber} is available for download: [${artifactName}](${artifactUrl})`;
+            const prNumber = context.payload.pull_request.number;
+            const previewUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-preview/${prNumber}`;
+            const commentBody = `🚀 PR Preview available at: [${previewUrl}](${previewUrl})`;
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
