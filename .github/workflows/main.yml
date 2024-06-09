@@ -78,10 +78,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { context } = require('@actions/github');
             const artifactName = '${{ steps.set_artifact_name.outputs.artifact_name }}';
-            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}/artifacts`;
-            const prNumber = context.issue.number;
+            const artifactUrl = `https://github.com/${{ github.repository_owner }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts`;
+            const prNumber = ${{ github.event.pull_request.number }};
             const commentBody = `🚀 Build artifact for PR #${prNumber} is available for download: [${artifactName}](${artifactUrl})`;
             github.rest.issues.createComment({
               owner: context.repo.owner,
