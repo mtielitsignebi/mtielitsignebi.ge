@@ -14,3 +14,13 @@
 - [Donate](https://www.mtielitsignebi.ge/donate)
 
 - [Admin](https://www.mtielitsignebi.ge/login)
+
+## Guides
+
+### How to Add a New Page
+
+In order to add a new page, navigate to `src/pages/App.tsx` and add a new `Page` with the appropriate `route` and `component`.
+
+### Admin Dashboard
+
+The project uses the `Control-X` library for feature management. Please ensure that you have access to this [link](https://github.com/users/etlyn/packages/npm/package/control-x)
