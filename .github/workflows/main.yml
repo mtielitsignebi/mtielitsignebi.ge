@@ -55,7 +55,10 @@ jobs:
           destination_dir: pr-preview/${{ github.event.pull_request.number }}
 
       - name: Comment on PR with preview link
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
