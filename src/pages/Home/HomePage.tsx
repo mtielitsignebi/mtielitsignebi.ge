@@ -17,8 +17,8 @@ const StyledHomePage = styled.div`
   padding: 0px 0px 32px;
   position: relative;
   flex: 1;
-  display: "flex";
-  justify-content: "center";
+  display: flex;
+  justify-content: center;
 
   & .hero-section-instance {
     color: var(--text) !important;
