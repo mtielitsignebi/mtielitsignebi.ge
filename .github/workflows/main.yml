@@ -11,6 +11,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  pull-requests: write
 
 concurrency:
   group: "pages"
@@ -65,3 +66,26 @@ jobs:
         with:
           name: ${{ github.event_name == 'pull_request' && steps.set_artifact_name.outputs.artifact_name || 'github-pages' }}
           path: ./build
+
+      - name: Upload artifact to GitHub
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifact
+          path: ./build
+
+      - name: Comment on PR with artifact link
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { context } = require('@actions/github');
+            const artifactName = '${{ steps.set_artifact_name.outputs.artifact_name }}';
+            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}/artifacts`;
+            const prNumber = context.issue.number;
+            const commentBody = `🚀 Build artifact for PR #${prNumber} is available for download: [${artifactName}](${artifactUrl})`;
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: commentBody
+            });
