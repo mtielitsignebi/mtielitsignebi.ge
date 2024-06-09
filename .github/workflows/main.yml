@@ -3,33 +3,37 @@ name: pipeline
 on:
   pull_request:
     branches: [main]
-    types: [opened, synchronize]
-  push:
-    branches: [main]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
   pages: write
   id-token: write
+  pull-requests: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Build the App
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
-      - name: Set up Node.js v16.x
-        uses: actions/setup-node@v1
+      - name: Set up Node.js v18.x
+        uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
+          node-version: "18.x"
 
-      - name: Install
+      - name: Authenticate with GitHub Packages
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.ETLYN_PAT }}" > ~/.npmrc
+
+      - name: Configure npm to use Etlyn organization's registry
+        run: echo "@etlyn:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+
+      - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
@@ -39,21 +43,31 @@ jobs:
             npm i
           fi
 
-      - name: Build
+      - name: Build the project
         run: |
           npm run build
           touch ./build/.nojekyll
+          echo '<script>location.href="/index.html"</script>' > ./build/404.html
 
-      - name: Set status
-        if: github.event_name == 'pull_request'
-        uses: EndBug/add-and-commit@v7.0.0
-
-      - name: Set artifact name
-        id: set_artifact_name
-        run: echo "::set-output name=artifact_name::pr-${{ github.event.pull_request.number }}"
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: ${{ github.event_name == 'pull_request' && steps.set_artifact_name.outputs.artifact_name || 'github-pages' }}
-          path: ./build
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          destination_dir: pr-preview/${{ github.event.pull_request.number }}
+
+      - name: Comment on PR with preview link
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GH_PAT }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const previewUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-preview/${prNumber}`;
+            const commentBody = `🚀 PR Preview available at: [${previewUrl}](${previewUrl})`;
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: commentBody
+            });
