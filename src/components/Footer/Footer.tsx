@@ -19,7 +19,6 @@ const StyledFooter = styled.div`
   flex-direction: column;
   gap: 48px;
   padding: 40px 0px;
-  position: relative;
 
   & .actions-2 {
     align-items: center;
@@ -28,8 +27,6 @@ const StyledFooter = styled.div`
     flex-wrap: wrap;
     gap: 32px 16px;
     justify-content: center;
-    position: relative;
-    width: 296px;
   }
 
   & .logo-2 {
