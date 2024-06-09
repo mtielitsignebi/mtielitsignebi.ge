@@ -47,6 +47,7 @@ jobs:
         run: |
           npm run build
           touch ./build/.nojekyll
+          echo '<script>location.href="/index.html"</script>' > ./build/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -59,6 +60,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GH_PAT }}
           script: |
             const prNumber = context.payload.pull_request.number;
             const previewUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-preview/${prNumber}`;

@@ -1,6 +1,6 @@
 # mtielitsignebi.ge
 
-## Setup
+## Dev Setup
 
 1. Use regular `npm` or install `yarn` globally by running `npm install --global yarn`
 2. Run `yarn` or `npm install` in project root to install repo dependencies.
@@ -9,4 +9,8 @@
 
 ## Available Pages
 
-[Home](https://www.mtielitsignebi.ge/home)
+- [Home](https://www.mtielitsignebi.ge/home)
+
+- [Donate](https://www.mtielitsignebi.ge/donate)
+
+- [Admin](https://www.mtielitsignebi.ge/login)
