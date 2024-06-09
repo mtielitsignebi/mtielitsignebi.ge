@@ -14,3 +14,9 @@
 - [Donate](https://www.mtielitsignebi.ge/donate)
 
 - [Admin](https://www.mtielitsignebi.ge/login)
+
+## Guides
+
+### How to Add a New Page
+
+In order to add a new page, navigate to `src/pages/App.tsx` and add a new `Page` with the appropriate `route` and `component`.
