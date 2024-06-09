@@ -60,7 +60,7 @@ jobs:
         id: set_artifact_name
         run: echo "::set-output name=artifact_name::pr-${{ github.event.pull_request.number }}"
 
-      - name: Upload artifact
+      - name: Prepare artifact
         uses: actions/upload-pages-artifact@v1
         with:
           name: ${{ github.event_name == 'pull_request' && steps.set_artifact_name.outputs.artifact_name || 'github-pages' }}
