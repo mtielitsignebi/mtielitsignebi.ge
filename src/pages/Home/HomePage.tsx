@@ -61,11 +61,7 @@ export const HomePage = (): JSX.Element => {
 
   return (
     <StyledHomePage>
-      <Header
-        className="header-instance"
-        logo="https://c.animaapp.com/PUxN8WIz/img/logo-3.svg"
-        platform={platform}
-      />
+      <Header platform={platform} />
 
       <HeroSection platform={platform} />
 
