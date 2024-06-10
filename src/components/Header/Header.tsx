@@ -10,6 +10,7 @@ import {
   MenuItem,
   MenuDiv,
 } from "./styles";
+import { useNavigate } from "react-router";
 
 interface Props {
   platform: string;
@@ -17,26 +18,38 @@ interface Props {
 
 export const Header = ({ platform }: Props): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const reloadPage = () => {
+    window.scrollTo(0, 0);
+    window.location.reload();
+  };
+
   return (
     <StyledHeader platform={platform} className="header">
-      <Logo
-        className="logo"
-        alt="Logo"
-        src={"https://c.animaapp.com/9E1pYK5V/img/logo-2.svg"}
-      />
-      <Actions platform={platform} className="actions">
-        <Button
-          override={<Usericon1 className="usericon-1" />}
-          style="ghost"
-          text="შესვლა"
+      <div onClick={reloadPage}>
+        <Logo
+          className="logo"
+          alt="Logo"
+          src={"https://c.animaapp.com/9E1pYK5V/img/logo-2.svg"}
         />
+      </div>
+      <Actions platform={platform} className="actions">
+        <div onClick={() => navigate(`/login`)}>
+          <Button
+            override={<Usericon1 className="usericon-1" />}
+            style="ghost"
+            text="შესვლა"
+          />
+        </div>
 
-        <Button icon={false} style="default" text="დონაცია" />
+        <div onClick={() => navigate(`/donate`)}>
+          <Button icon={false} style="default" text="დონაცია" />
+        </div>
       </Actions>
       <Hamburger platform={platform} onClick={toggleMenu}>
         <span />
@@ -44,9 +57,14 @@ export const Header = ({ platform }: Props): JSX.Element => {
         <span />
       </Hamburger>
       <Menu platform={platform} isOpen={menuOpen} className="menu">
-        <MenuItem className="item">მთავარი</MenuItem>
+        <div onClick={() => navigate(`/home`)}>
+          <MenuItem className="item">მთავარი</MenuItem>
+        </div>
         <MenuDiv className="div">ჩვენ შესახებ</MenuDiv>
-        <MenuDiv className="div">სიახლეები</MenuDiv>
+
+        <div onClick={() => navigate(`/events`)}>
+          <MenuDiv className="div">სიახლეები</MenuDiv>
+        </div>
         {platform !== "web" && (
           <>
             <Button
