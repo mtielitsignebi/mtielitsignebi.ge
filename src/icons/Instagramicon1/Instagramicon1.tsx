@@ -13,9 +13,6 @@ const StyledInstagramicon1 = styled.svg`
     stroke-width: 2.25;
   }
 
-  & .path {
-    fill: #000d38;
-  }
 `;
 
 export const Instagramicon1 = ({ className }: Props): JSX.Element => {
