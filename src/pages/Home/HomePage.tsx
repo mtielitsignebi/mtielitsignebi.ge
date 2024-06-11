@@ -20,10 +20,6 @@ const StyledHomePage = styled.div`
   display: flex;
   justify-content: center;
 
-  & .hero-section-instance {
-    color: var(--text) !important;
-  }
-
   & .divider {
     height: 100px !important;
     position: relative !important;
@@ -66,12 +62,11 @@ export const HomePage = (): JSX.Element => {
   return (
     <StyledHomePage>
       <Header platform={platform} />
-      <HeroSection
-        className="design-component-instance-node-2"
-        headingClassName="hero-section-instance"
-        platform={platform}
-      />
+
+      <HeroSection platform={platform} />
+
       <PlatformWeb className="divider" />
+
       <HistorySection
         className="design-component-instance-node-2"
         platform={platform}
