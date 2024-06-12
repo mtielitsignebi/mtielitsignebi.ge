@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 
 interface Props {
-  platform: "web";
   className: any;
 }
 
@@ -131,29 +130,64 @@ const StyledAboutSection = styled.div`
   }
 `;
 
-export const AboutSection = ({ platform, className }: Props): JSX.Element => {
+export const AboutSection = ({ className }: Props): JSX.Element => {
   return (
     <StyledAboutSection className={`about-section ${className}`}>
       <div className="description">
         <div className="title">“მთიელი წიგნების” შესახებ</div>
         <p className="paragraph">
-          ამ ჯგუფის არსებობა ერთმა პრობლემამ განაპირობა: მთაში ბევრ რაიონულ ცენტრშიც კი არ არის წიგნის მაღაზია, არ
-          ტარდება წიგნის ფესტივალები, შესაბამისად, ბავშვებისთვის ხელმიუწვდომელია თანამედროვე ლიტერატურა, ბოლო დროის
-          თარგმანები. ყველაფერი მეგობრების მიერ ლაშქრობებში წაღებული რამდენიმე წიგნით დაიწყო, რომელთაც ადგილობრივ
-          ბავშვებს უტოვებდნენ. მაღალმთიან რეგიონებში მოგზაურობისას აღმოაჩინეს, რომ თანამედროვე ლიტერატურა ნაკლებად
-          ხელმისაწვდომი იყო ბავშვებისთვის. ბევრ რაიონულ ცენტრში საერთოდ არ იყო წიგნის მაღაზია, ბიბლიოთეკებში კი
-          სიძველისგან გაცრეცილი წიგნები ბავშვებს კითხვის ჟინს უკარგავდა.
+          ამ ჯგუფის არსებობა ერთმა პრობლემამ განაპირობა: მთაში ბევრ რაიონულ
+          ცენტრშიც კი არ არის წიგნის მაღაზია, არ ტარდება წიგნის ფესტივალები,
+          შესაბამისად, ბავშვებისთვის ხელმიუწვდომელია თანამედროვე ლიტერატურა,
+          ბოლო დროის თარგმანები. ყველაფერი მეგობრების მიერ ლაშქრობებში წაღებული
+          რამდენიმე წიგნით დაიწყო, რომელთაც ადგილობრივ ბავშვებს უტოვებდნენ.
+          მაღალმთიან რეგიონებში მოგზაურობისას აღმოაჩინეს, რომ თანამედროვე
+          ლიტერატურა ნაკლებად ხელმისაწვდომი იყო ბავშვებისთვის. ბევრ რაიონულ
+          ცენტრში საერთოდ არ იყო წიგნის მაღაზია, ბიბლიოთეკებში კი სიძველისგან
+          გაცრეცილი წიგნები ბავშვებს კითხვის ჟინს უკარგავდა.
         </p>
       </div>
       <div className="photos">
-        <img className="image" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-08-1@2x.png" />
-        <img className="img" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-07-1@2x.png" />
-        <img className="image-2" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-06-1@2x.png" />
-        <img className="image-3" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-05-1@2x.png" />
-        <img className="image-4" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-04-1@2x.png" />
-        <img className="image-5" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-03-1@2x.png" />
-        <img className="image-6" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-02-1@2x.png" />
-        <img className="image-7" alt="Image" src="https://c.animaapp.com/rsy2ONkj/img/image-01-1.png" />
+        <img
+          className="image"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-08-1@2x.png"
+        />
+        <img
+          className="img"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-07-1@2x.png"
+        />
+        <img
+          className="image-2"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-06-1@2x.png"
+        />
+        <img
+          className="image-3"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-05-1@2x.png"
+        />
+        <img
+          className="image-4"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-04-1@2x.png"
+        />
+        <img
+          className="image-5"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-03-1@2x.png"
+        />
+        <img
+          className="image-6"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-02-1@2x.png"
+        />
+        <img
+          className="image-7"
+          alt="Image"
+          src="https://c.animaapp.com/rsy2ONkj/img/image-01-1.png"
+        />
       </div>
     </StyledAboutSection>
   );

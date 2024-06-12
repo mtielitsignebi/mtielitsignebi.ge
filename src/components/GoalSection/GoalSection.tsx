@@ -2,10 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Button } from "../Button";
 import styled from "styled-components";
-
-interface Props {
-  platform: string;
-}
+import { usePlatform } from "../../hooks";
 
 const StyledGoalSection = styled.div`
   height: 702px;
@@ -68,7 +65,8 @@ const StyledGoalSection = styled.div`
   }
 `;
 
-export const GoalSection = ({ platform }: Props): JSX.Element => {
+export const GoalSection = (): JSX.Element => {
+  const platform = usePlatform();
   return (
     <StyledGoalSection>
       <div className="overlap-group">

@@ -10,8 +10,8 @@ export const StyledHeader = styled.div<{ platform: string }>`
   justify-content: space-between;
   padding: 16px 80px;
   position: relative;
-  width: 100%;
-  max-width: 1440px;
+  margin-left: 140px;
+  margin-right: 140px;
 
   ${({ platform }) =>
     platform !== "web" &&
