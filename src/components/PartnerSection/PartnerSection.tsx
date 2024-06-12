@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import { PartnerCard } from "../PartnerCard";
 import styled from "styled-components";
+import { Platform } from "../../hooks/usePlatform";
 
 interface Props {
-  platform: "web";
+  platform: Platform;
   className: any;
   partnerCardLogo: string;
   partnerCardImg: string;
