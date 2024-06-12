@@ -46,14 +46,32 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      - name: Run tests
+        run: yarn test
+
       - name: Comment on PR with success message
-        if: github.event_name == 'pull_request'
+        if: success() && github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GH_PAT }}
           script: |
             const prNumber = context.payload.pull_request.number;
-            const commentBody = "🎉 Nice work, all checks have passed";
+            const commentBody = "🎉 Nice work, all checks have passed!";
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: commentBody
+            });
+
+      - name: Comment on PR with failure message
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GH_PAT }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const commentBody = "🚨 PR has failing checks, please review the pipeline report.";
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,

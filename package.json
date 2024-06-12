@@ -6,7 +6,7 @@
   "scripts": {
     "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "storybook": "storybook dev -p 6006",
     "purge": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
   },
