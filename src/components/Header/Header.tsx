@@ -42,7 +42,7 @@ export const Header = ({ platform }: Props): JSX.Element => {
         <div onClick={() => navigate(`/login`)}>
           <Button
             override={<Usericon1 className="usericon-1" />}
-            style="ghost"
+            style="outline"
             text="შესვლა"
           />
         </div>
