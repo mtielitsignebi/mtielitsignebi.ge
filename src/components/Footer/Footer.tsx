@@ -86,8 +86,8 @@ export const Footer = ({
 }: Props): JSX.Element => {
   return (
     <StyledFooter className={`footer ${className}`}>
+      <img className="logo-2" alt="Logo" src={logo} />
       <div className="actions-2">
-        <img className="logo-2" alt="Logo" src={logo} />
         <Button
           className="button-instance"
           divClassName="design-component-instance-node"
