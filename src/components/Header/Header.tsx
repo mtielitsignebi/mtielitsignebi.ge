@@ -60,7 +60,10 @@ export const Header = ({ platform }: Props): JSX.Element => {
         <div onClick={() => navigate(`/home`)}>
           <MenuItem className="item">მთავარი</MenuItem>
         </div>
-        <MenuDiv className="div">ჩვენ შესახებ</MenuDiv>
+
+        <div onClick={() => navigate(`/about`)}>
+          <MenuDiv className="div">ჩვენ შესახებ</MenuDiv>
+        </div>
 
         <div onClick={() => navigate(`/events`)}>
           <MenuDiv className="div">სიახლეები</MenuDiv>
