@@ -44,27 +44,16 @@ jobs:
           fi
 
       - name: Build the project
-        run: |
-          npm run build
-          touch ./build/.nojekyll
-          echo '<script>location.href="/pr-preview/${{ github.event.pull_request.number }}/index.html"</script>' > ./build/404.html
+        run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          destination_dir: pr-preview/${{ github.event.pull_request.number }}
-
-      - name: Comment on PR with preview link
+      - name: Comment on PR with success message
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GH_PAT }}
           script: |
             const prNumber = context.payload.pull_request.number;
-            const previewUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-preview/${prNumber}`;
-            const commentBody = `🚀 PR Preview available at: [${previewUrl}](${previewUrl})`;
+            const commentBody = "🎉 Nice work, all checks have passed";
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
