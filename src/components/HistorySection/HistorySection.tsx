@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { usePlatform } from "../../hooks";
+import { platform } from "os";
 
-const StyledHistorySection = styled.div`
+const StyledHistorySection = styled.div<{ platform: string }>`
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -11,10 +12,19 @@ const StyledHistorySection = styled.div`
   position: relative;
   width: 1280px;
 
+  ${({ platform }) =>
+    platform !== "web" &&
+    css`
+      width: 100%;
+      padding: 0;
+      flex-direction: column;
+      gap: 24px;
+    `}
+
   & .image {
-    height: 700px;
+    height: ${({ platform }) => (platform === "web" ? "700px" : "500px")};
     position: relative;
-    width: 500px;
+    width: ${({ platform }) => (platform === "web" ? "500px" : "342px")};
   }
 
   & .frame {
@@ -24,6 +34,7 @@ const StyledHistorySection = styled.div`
     flex-direction: column;
     gap: 24px;
     position: relative;
+    width: ${({ platform }) => (platform === "web" ? "700px" : "342px")}
   }
 
   & .title {
@@ -36,8 +47,8 @@ const StyledHistorySection = styled.div`
     line-height: var(--title-m-line-height);
     margin-top: -1px;
     position: relative;
-    white-space: nowrap;
     width: fit-content;
+    text-align: center;
   }
 
   & .paragraph {
@@ -48,14 +59,14 @@ const StyledHistorySection = styled.div`
     letter-spacing: 0;
     line-height: 25.2px;
     position: relative;
-    width: 700px;
+    width: fit-content;
   }
 `;
 
 export const HistorySection = (): JSX.Element => {
   const platform = usePlatform();
   return (
-    <StyledHistorySection className="history-section">
+    <StyledHistorySection platform={platform} className="history-section">
       <img
         className="image"
         alt="Image"
