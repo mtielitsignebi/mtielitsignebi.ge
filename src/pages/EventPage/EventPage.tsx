@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "../../components/Card";
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { Facebookicon1 } from "../../icons/Facebookicon1";
-import { Instagramicon } from "../../icons/Instagramicon";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
+import { Layout } from "../../components/Layout";
 
 const StyledEventPage = styled.div`
   align-items: center;
@@ -80,42 +77,35 @@ export const EventPage = (): JSX.Element => {
   }, []);
 
   return (
-    <StyledEventPage>
-      <Header platform={platform} />
-      <div className="heading-get-wrapper">
-        <div className="heading-get">სიახლეები</div>
-      </div>
-      <div
-        onClick={() => {
-          navigate(`/events/1`);
-        }}
-      >
-        <Card
-          className="card-instance"
-          platform="web"
-          image="https://c.animaapp.com/H3v2GtT6/img/image-2.png"
-        />
-      </div>
+    <Layout>
+      <StyledEventPage>
+        <div className="heading-get-wrapper">
+          <div className="heading-get">სიახლეები</div>
+        </div>
+        <div
+          onClick={() => {
+            navigate(`/events/1`);
+          }}
+        >
+          <Card
+            className="card-instance"
+            platform="web"
+            image="https://c.animaapp.com/H3v2GtT6/img/image-2.png"
+          />
+        </div>
 
-      <div
-        onClick={() => {
-          navigate(`/events/1`);
-        }}
-      >
-        <Card
-          className="card-instance"
-          platform="web"
-          image="https://c.animaapp.com/H3v2GtT6/img/image-3.png"
-        />
-      </div>
-
-      <Footer
-        buttonIcon={<Facebookicon1 className="facebookicon-1" />}
-        className="footer-instance"
-        override={<Instagramicon className="instagramicon-instance" />}
-        platform="web"
-        logo=""
-      />
-    </StyledEventPage>
+        <div
+          onClick={() => {
+            navigate(`/events/1`);
+          }}
+        >
+          <Card
+            className="card-instance"
+            platform="web"
+            image="https://c.animaapp.com/H3v2GtT6/img/image-3.png"
+          />
+        </div>
+      </StyledEventPage>
+    </Layout>
   );
 };

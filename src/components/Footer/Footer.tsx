@@ -4,14 +4,7 @@ import { Facebookicon } from "../../icons/Facebookicon";
 import { Instagramicon1 } from "../../icons/Instagramicon1";
 import { Button } from "../Button";
 import styled from "styled-components";
-
-interface Props {
-  platform: string;
-  className: any;
-  logo: string;
-  buttonIcon: JSX.Element;
-  override: JSX.Element;
-}
+import { usePlatform } from "../../hooks";
 
 const StyledFooter = styled.div`
   align-items: center;
@@ -78,16 +71,16 @@ const StyledFooter = styled.div`
 `;
 
 export const Footer = ({
-  platform,
   className,
   logo = "https://c.animaapp.com/9E1pYK5V/img/logo.svg",
   buttonIcon = <Facebookicon className="facebook-icon" />,
   override = <Instagramicon1 className="instagram-icon" />,
-}: Props): JSX.Element => {
+}: any): JSX.Element => {
+  const platform = usePlatform();
   return (
     <StyledFooter className={`footer ${className}`}>
+      <img className="logo-2" alt="Logo" src={logo} />
       <div className="actions-2">
-        <img className="logo-2" alt="Logo" src={logo} />
         <Button
           className="button-instance"
           divClassName="design-component-instance-node"

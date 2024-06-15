@@ -1,13 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-
-interface Props {
-  platform: string;
-  className: any;
-  imageClassName: any;
-  image: string;
-}
+import { usePlatform } from "../../hooks";
 
 const StyledCarousel = styled.div`
   align-items: flex-start;
@@ -40,14 +34,10 @@ const StyledCarousel = styled.div`
   }
 `;
 
-export const Carousel = ({
-  platform,
-  className,
-  imageClassName,
-  image = "https://c.animaapp.com/9E1pYK5V/img/image-03.png",
-}: Props): JSX.Element => {
+export const Carousel = (): JSX.Element => {
+  const platform = usePlatform();
   return (
-    <StyledCarousel className={`carousel ${className}`}>
+    <StyledCarousel className="carousel">
       <img
         className="image-2"
         alt="Image"
@@ -58,7 +48,11 @@ export const Carousel = ({
         alt="Image"
         src="https://c.animaapp.com/9E1pYK5V/img/image-02-1.png"
       />
-      <img className={`image-4 ${imageClassName}`} alt="Image" src={image} />
+      <img
+        className="image-4"
+        alt="Image"
+        src="https://c.animaapp.com/9E1pYK5V/img/image-03.png"
+      />
     </StyledCarousel>
   );
 };

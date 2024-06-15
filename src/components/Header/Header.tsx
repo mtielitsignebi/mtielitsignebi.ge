@@ -10,15 +10,13 @@ import {
   MenuItem,
 } from "./styles";
 import { useLocation, useNavigate } from "react-router";
+import { usePlatform } from "../../hooks";
 
-interface Props {
-  platform: string;
-}
-
-export const Header = ({ platform }: Props): JSX.Element => {
+export const Header = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const platform = usePlatform();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

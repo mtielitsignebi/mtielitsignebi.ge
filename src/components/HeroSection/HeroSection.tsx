@@ -6,12 +6,11 @@ import {
   Heading,
 } from "./styles";
 import { Playicon } from "../../icons/Playicon";
+import { usePlatform } from "../../hooks";
 
-interface Props {
-  platform: string;
-}
+export const HeroSection = (): JSX.Element => {
+  const platform = usePlatform();
 
-export const HeroSection = ({ platform }: Props): JSX.Element => {
   return (
     <HeroSectionWrapper platform={platform} className="hero-section">
       <HeroImage platform={platform} className="hero-image">

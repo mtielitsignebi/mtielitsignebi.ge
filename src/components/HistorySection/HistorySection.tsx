@@ -1,11 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-
-interface Props {
-  platform: string;
-  className: any;
-}
+import { usePlatform } from "../../hooks";
 
 const StyledHistorySection = styled.div`
   align-items: center;
@@ -56,9 +52,10 @@ const StyledHistorySection = styled.div`
   }
 `;
 
-export const HistorySection = ({ platform, className }: Props): JSX.Element => {
+export const HistorySection = (): JSX.Element => {
+  const platform = usePlatform();
   return (
-    <StyledHistorySection className={`history-section ${className}`}>
+    <StyledHistorySection className="history-section">
       <img
         className="image"
         alt="Image"
