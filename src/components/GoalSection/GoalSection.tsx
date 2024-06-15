@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Button } from "../Button";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { usePlatform } from "../../hooks";
 
-const StyledGoalSection = styled.div`
+const StyledGoalSection = styled.div<{ platform: string }>`
   height: 702px;
   position: relative;
   width: 1280px;
@@ -27,6 +27,12 @@ const StyledGoalSection = styled.div`
     position: absolute;
     top: 127px;
     width: 1280px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 342px;
+      `}
   }
 
   & .heading-our {
@@ -54,6 +60,12 @@ const StyledGoalSection = styled.div`
     position: relative;
     text-align: center;
     width: 920px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 310px;
+      `}
   }
 
   & .img {
@@ -62,13 +74,19 @@ const StyledGoalSection = styled.div`
     position: absolute;
     top: 0;
     width: 200px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 180px;
+      `}
   }
 `;
 
 export const GoalSection = (): JSX.Element => {
   const platform = usePlatform();
   return (
-    <StyledGoalSection>
+    <StyledGoalSection platform={platform}>
       <div className="overlap-group">
         <div className="goal">
           <div className="heading-our">ჩვენი მიზანი</div>
