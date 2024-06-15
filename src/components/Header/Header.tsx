@@ -8,14 +8,14 @@ import {
   Hamburger,
   Menu,
   MenuItem,
-  MenuDiv,
 } from "./styles";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { usePlatform } from "../../hooks";
 
 export const Header = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const platform = usePlatform();
 
   const toggleMenu = () => {
@@ -40,7 +40,7 @@ export const Header = (): JSX.Element => {
         <div onClick={() => navigate(`/login`)}>
           <Button
             override={<Usericon1 className="usericon-1" />}
-            style="ghost"
+            style="outline"
             text="შესვლა"
           />
         </div>
@@ -55,17 +55,30 @@ export const Header = (): JSX.Element => {
         <span />
       </Hamburger>
       <Menu platform={platform} isOpen={menuOpen} className="menu">
-        <div onClick={() => navigate(`/home`)}>
-          <MenuItem className="item">მთავარი</MenuItem>
-        </div>
-
-        <div onClick={() => navigate(`/about`)}>
-          <MenuDiv className="div">ჩვენ შესახებ</MenuDiv>
-        </div>
-
-        <div onClick={() => navigate(`/events`)}>
-          <MenuDiv className="div">სიახლეები</MenuDiv>
-        </div>
+        <MenuItem
+          onClick={() => navigate(`/home`)}
+          className={`item ${
+            location.pathname === "/home" ? "MenuItemActive" : ""
+          }`}
+        >
+          მთავარი
+        </MenuItem>
+        <MenuItem
+          onClick={() => navigate(`/about`)}
+          className={`item ${
+            location.pathname === "/about" ? "MenuItemActive" : ""
+          }`}
+        >
+          ჩვენ შესახებ
+        </MenuItem>
+        <MenuItem
+          onClick={() => navigate(`/events`)}
+          className={`item ${
+            location.pathname === "/events" ? "MenuItemActive" : ""
+          }`}
+        >
+          სიახლეები
+        </MenuItem>
         {platform !== "web" && (
           <>
             <Button
