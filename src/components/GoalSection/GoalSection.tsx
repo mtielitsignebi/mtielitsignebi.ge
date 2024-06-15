@@ -8,6 +8,12 @@ const StyledGoalSection = styled.div<{ platform: string }>`
   height: 702px;
   position: relative;
   width: 1280px;
+  
+  ${({ platform }) =>
+    platform !== "web" &&
+    css`
+      width: 390px;
+    `}
 
   & .overlap-group {
     height: 547px;
@@ -79,6 +85,8 @@ const StyledGoalSection = styled.div<{ platform: string }>`
       platform !== "web" &&
       css`
         width: 180px;
+        height: 155px;
+        left: 81px; 
       `}
   }
 `;
