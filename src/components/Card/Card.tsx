@@ -9,6 +9,8 @@ interface Props {
   className: any;
   image: string;
   text: string;
+  title: string;
+  date: string;
 }
 
 export const Card = ({
@@ -16,6 +18,8 @@ export const Card = ({
   className,
   image = "https://c.animaapp.com/H3v2GtT6/img/image-1.png",
   text,
+  title,
+  date,
 }: Props): JSX.Element => {
   return (
     <StyledCard platform={platform} className={`card ${className}`}>
@@ -23,8 +27,8 @@ export const Card = ({
         <div className="content">
           <div className="txt">
             <div className="heading">
-              <div className="title">მთიელი წიგნები სვანეთში</div>
-              <div className="date">15 მაისი, 2023</div>
+              <div className="title">{title}</div>
+              <div className="date">{date}</div>
             </div>
             <p className="paragraph">{text}</p>
           </div>
@@ -42,4 +46,6 @@ Card.propTypes = {
   platform: PropTypes.oneOf(Object.values(Platform)),
   image: PropTypes.string,
   text: PropTypes.string,
+  title: PropTypes.string,
+  date: PropTypes.string,
 };
