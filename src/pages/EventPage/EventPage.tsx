@@ -1,110 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card } from "../../components/Card";
 import { useNavigate } from "react-router";
-import styled from "styled-components";
 import { Layout } from "../../components/Layout";
-
-const StyledEventPage = styled.div`
-  align-items: center;
-  background-color: #6ab271;
-  flex-direction: column;
-  padding: 0px 0px 32px;
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-
-  & .header-instance {
-    border-left-style: none !important;
-    border-right-style: none !important;
-    border-top-style: none !important;
-    flex: 0 0 auto !important;
-  }
-
-  & .heading-get-wrapper {
-    align-items: center;
-    display: inline-flex;
-    flex: 0 0 auto;
-    padding: 64px 0px;
-    position: relative;
-  }
-
-  & .heading-get {
-    color: var(--text);
-    font-family: var(--title-l-font-family);
-    font-size: var(--title-l-font-size);
-    font-style: var(--title-l-font-style);
-    font-weight: var(--title-l-font-weight);
-    letter-spacing: var(--title-l-letter-spacing);
-    line-height: var(--title-l-line-height);
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-
-  & .card-instance {
-    flex: 0 0 auto !important;
-  }
-
-  & .footer-instance {
-    background-color: transparent !important;
-    flex: 0 0 auto !important;
-  }
-
-  & .facebookicon-1 {
-    margin-left: -0.5px !important;
-    position: relative !important;
-    width: 24px !important;
-  }
-
-  & .instagramicon-instance {
-    height: 24px !important;
-    margin-left: -3px !important;
-    position: relative !important;
-    width: 24px !important;
-  }
-`;
+import { StyledEventPage } from "./styles";
+import { usePlatform } from "../../hooks";
 
 export const EventPage = (): JSX.Element => {
   const navigate = useNavigate();
-  const [platform, setPlatform] = useState("web");
-
-  useEffect(() => {
-    if (window.screen.width < 768) {
-      setPlatform("mobile");
-    }
-  }, []);
+  const platform = usePlatform();
 
   return (
     <Layout>
-      <StyledEventPage>
+      <StyledEventPage platform={platform}>
         <div className="heading-get-wrapper">
           <div className="heading-get">სიახლეები</div>
         </div>
-        <div
-          onClick={() => {
-            navigate(`/events/1`);
-          }}
-        >
-          <Card
-            className="card-instance"
-            platform="web"
-            image="https://c.animaapp.com/H3v2GtT6/img/image-2.png"
-          />
-        </div>
 
-        <div
-          onClick={() => {
+        <Card
+          clickHandler={() => {
             navigate(`/events/1`);
           }}
-        >
-          <Card
-            className="card-instance"
-            platform="web"
-            image="https://c.animaapp.com/H3v2GtT6/img/image-3.png"
-          />
-        </div>
+          className="card-instance"
+          platform={platform}
+          image="https://c.animaapp.com/H3v2GtT6/img/image-2.png"
+          title="მთიელი წიგნები სვანეთში"
+          date="15 მაისი, 2023"
+          text="სხვა პასუხისმგებლობაც გვქონდა ამ გასვლაში - დათო ტურაშვილი იქნებოდა ჩვენ გვერდით. ერთია როცა წიგნი მიგაქვს
+              ბავშვებთან, მაგრამ სხვა გრძნობაა როცა მათი საყვარელი ავტორიც თან მიგყავს."
+        />
+
+        <Card
+          clickHandler={() => {
+            navigate(`/events/1`);
+          }}
+          className="card-instance"
+          platform={platform}
+          image="https://c.animaapp.com/H3v2GtT6/img/image-3.png"
+          title="მთიელი წიგნები სვანეთში"
+          date="15 მაისი, 2023"
+          text="სხვა პასუხისმგებლობაც გვქონდა ამ გასვლაში - დათო ტურაშვილი იქნებოდა ჩვენ გვერდით. ერთია როცა წიგნი მიგაქვს
+              ბავშვებთან, მაგრამ სხვა გრძნობაა როცა მათი საყვარელი ავტორიც თან მიგყავს."
+        />
+        
       </StyledEventPage>
     </Layout>
   );
