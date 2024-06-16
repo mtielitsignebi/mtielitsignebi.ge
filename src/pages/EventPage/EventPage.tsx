@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card } from "../../components/Card";
 import { useNavigate } from "react-router";
 import { Layout } from "../../components/Layout";
 import { StyledEventPage } from "./styles";
+import { usePlatform } from "../../hooks";
 
 export const EventPage = (): JSX.Element => {
   const navigate = useNavigate();
-  const [platform, setPlatform] = useState("web");
-
-  useEffect(() => {
-    if (window.screen.width < 768) {
-      setPlatform("mobile");
-    }
-  }, []);
+  const platform = usePlatform();
 
   return (
     <Layout>
-      <StyledEventPage>
+      <StyledEventPage platform={platform}>
         <div className="heading-get-wrapper">
           <div className="heading-get">სიახლეები</div>
         </div>
@@ -27,7 +22,7 @@ export const EventPage = (): JSX.Element => {
         >
           <Card
             className="card-instance"
-            platform="web"
+            platform={platform}
             image="https://c.animaapp.com/H3v2GtT6/img/image-2.png"
             text="სხვა პასუხისმგებლობაც გვქონდა ამ გასვლაში - დათო ტურაშვილი იქნებოდა ჩვენ გვერდით. ერთია როცა წიგნი მიგაქვს
               ბავშვებთან, მაგრამ სხვა გრძნობაა როცა მათი საყვარელი ავტორიც თან მიგყავს."
@@ -41,7 +36,7 @@ export const EventPage = (): JSX.Element => {
         >
           <Card
             className="card-instance"
-            platform="web"
+            platform={platform}
             image="https://c.animaapp.com/H3v2GtT6/img/image-3.png"
             text="სხვა პასუხისმგებლობაც გვქონდა ამ გასვლაში - დათო ტურაშვილი იქნებოდა ჩვენ გვერდით. ერთია როცა წიგნი მიგაქვს
               ბავშვებთან, მაგრამ სხვა გრძნობაა როცა მათი საყვარელი ავტორიც თან მიგყავს."

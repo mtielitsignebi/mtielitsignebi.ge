@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const StyledEventPage = styled.div`
+export const StyledEventPage = styled.div<{ platform: string }>`
   align-items: center;
   background-color: #6ab271;
   flex-direction: column;

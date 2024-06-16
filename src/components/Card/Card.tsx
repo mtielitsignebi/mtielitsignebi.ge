@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Handsicon } from "../../icons/Handsicon";
 import { StyledCard } from "./styles";
+import { Platform } from "../../hooks/usePlatform";
 
 interface Props {
-  platform: "web";
+  platform: string;
   className: any;
   image: string;
-  text: string
+  text: string;
 }
 
 export const Card = ({
@@ -17,7 +18,7 @@ export const Card = ({
   text,
 }: Props): JSX.Element => {
   return (
-    <StyledCard className={`card ${className}`}>
+    <StyledCard platform={platform} className={`card ${className}`}>
       <div className="div-2">
         <div className="content">
           <div className="txt">
@@ -38,7 +39,7 @@ export const Card = ({
 };
 
 Card.propTypes = {
-  platform: PropTypes.oneOf(["web"]),
+  platform: PropTypes.oneOf(Object.values(Platform)),
   image: PropTypes.string,
   text: PropTypes.string,
 };

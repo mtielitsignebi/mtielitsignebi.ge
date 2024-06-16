@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const StyledCard = styled.div`
+export const StyledCard = styled.div<{ platform: string }>`
   align-items: center;
   display: inline-flex;
   flex-direction: column;
