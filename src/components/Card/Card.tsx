@@ -11,6 +11,7 @@ interface Props {
   text: string;
   title: string;
   date: string;
+  clickHandler: () => void;
 }
 
 export const Card = ({
@@ -20,9 +21,14 @@ export const Card = ({
   text,
   title,
   date,
+  clickHandler,
 }: Props): JSX.Element => {
   return (
-    <StyledCard platform={platform} className={`card ${className}`}>
+    <StyledCard
+      platform={platform}
+      className={`card ${className}`}
+      onClick={clickHandler}
+    >
       <div className="div-2">
         <div className="content">
           <div className="txt">
@@ -48,4 +54,5 @@ Card.propTypes = {
   text: PropTypes.string,
   title: PropTypes.string,
   date: PropTypes.string,
+  clickHandler: PropTypes.func,
 };
