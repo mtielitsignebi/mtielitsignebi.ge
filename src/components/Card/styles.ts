@@ -23,6 +23,7 @@ export const StyledCard = styled.div<{ platform: string }>`
       platform !== "web" &&
       css`
         width: 100%;
+        padding: 40px 16px;
       `}
   }
 
@@ -40,6 +41,7 @@ export const StyledCard = styled.div<{ platform: string }>`
       css`
         flex-direction: column;
         width: 87%;
+        gap: 24px;
       `}
   }
 
@@ -119,6 +121,7 @@ export const StyledCard = styled.div<{ platform: string }>`
       css`
         width: 310px;
         height: 200px;
+        border-radius: 12px;
       `}
   }
 
@@ -135,6 +138,17 @@ export const StyledCard = styled.div<{ platform: string }>`
     position: absolute;
     top: -36px;
     width: 72px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        padding: 10px;
+        top: -24px;
+        left: 20px;
+      `}
   }
 
   & .hands-icon {

@@ -23,6 +23,12 @@ export const StyledEventPage = styled.div<{ platform: string }>`
     flex: 0 0 auto;
     padding: 64px 0px;
     position: relative;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        padding: 48px 0;
+      `}
   }
 
   & .heading-get {
@@ -37,6 +43,13 @@ export const StyledEventPage = styled.div<{ platform: string }>`
     position: relative;
     white-space: nowrap;
     width: fit-content;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        font-size: var(--title-m-medium-font-size);
+        font-weight: var(--title-m-medium-font-weight);
+      `}
   }
 
   & .card-instance {
