@@ -29,6 +29,8 @@ export const EventPage = (): JSX.Element => {
             className="card-instance"
             platform="web"
             image="https://c.animaapp.com/H3v2GtT6/img/image-2.png"
+            text="სხვა პასუხისმგებლობაც გვქონდა ამ გასვლაში - დათო ტურაშვილი იქნებოდა ჩვენ გვერდით. ერთია როცა წიგნი მიგაქვს
+              ბავშვებთან, მაგრამ სხვა გრძნობაა როცა მათი საყვარელი ავტორიც თან მიგყავს."
           />
         </div>
 
@@ -41,6 +43,8 @@ export const EventPage = (): JSX.Element => {
             className="card-instance"
             platform="web"
             image="https://c.animaapp.com/H3v2GtT6/img/image-3.png"
+            text="სხვა პასუხისმგებლობაც გვქონდა ამ გასვლაში - დათო ტურაშვილი იქნებოდა ჩვენ გვერდით. ერთია როცა წიგნი მიგაქვს
+              ბავშვებთან, მაგრამ სხვა გრძნობაა როცა მათი საყვარელი ავტორიც თან მიგყავს."
           />
         </div>
       </StyledEventPage>
