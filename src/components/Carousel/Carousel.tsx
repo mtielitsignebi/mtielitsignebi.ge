@@ -52,11 +52,31 @@ export const Carousel = (): JSX.Element => {
   const platform = usePlatform();
   return (
     <StyledCarousel platform={platform} className="carousel">
-      <img
-        className="image-2"
-        alt="Image"
-        src="https://c.animaapp.com/9E1pYK5V/img/image-01-1.png"
-      />
+      {platform === "web" ? (
+        <>
+          <img
+            className="image-2"
+            alt="Image"
+            src="https://c.animaapp.com/9E1pYK5V/img/image-01-1.png"
+          />
+          <img
+            className="image-3"
+            alt="Image"
+            src="https://c.animaapp.com/9E1pYK5V/img/image-02-1.png"
+          />
+          <img
+            className="image-4"
+            alt="Image"
+            src="https://c.animaapp.com/9E1pYK5V/img/image-03.png"
+          />
+        </>
+      ) : (
+        <img
+          className="image-2"
+          alt="Image"
+          src="https://c.animaapp.com/9E1pYK5V/img/image-01-1.png"
+        />
+      )}
     </StyledCarousel>
   );
 };
