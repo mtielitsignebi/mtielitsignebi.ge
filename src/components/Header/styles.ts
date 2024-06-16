@@ -95,21 +95,10 @@ export const Menu = styled.div<{ platform: string; isOpen: boolean }>`
     `}
 `;
 
-export const MenuItem = styled.div`
-  color: var(--text);
-  font-family: var(--body-m-semibold-font-family);
-  font-size: var(--body-m-semibold-font-size);
-  font-style: var(--body-m-semibold-font-style);
-  font-weight: var(--body-m-semibold-font-weight);
-  letter-spacing: var(--body-m-semibold-letter-spacing);
-  line-height: var(--body-m-semibold-line-height);
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-`;
-
-export const MenuDiv = styled.div`
+export const MenuItem = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--text);
   font-family: var(--body-m-regular-font-family);
   font-size: var(--body-m-regular-font-size);
@@ -121,4 +110,15 @@ export const MenuDiv = styled.div`
   position: relative;
   white-space: nowrap;
   width: fit-content;
+  border-radius: 8px;
+  padding: 0 8px;
+  height: 40px;
+
+  &:hover {
+    background-color: var(--background-100);
+  }
+
+  &.MenuItemActive {
+    background-color: var(--background-100);
+  }
 `;

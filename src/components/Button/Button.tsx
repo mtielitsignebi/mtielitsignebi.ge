@@ -6,7 +6,7 @@ import styled from "styled-components";
 interface Props {
   text: string;
   icon?: boolean;
-  style: "ghost" | "default";
+  style: "ghost" | "default" | "outline";
   className?: any;
   override?: JSX.Element;
   divClassName?: any;
@@ -51,6 +51,10 @@ const StyledButton = styled.button`
   &.ghost .text-wrapper {
     color: var(--primitives-accent-duplicate);
   }
+  
+  &.outline {
+    border: 1px solid var(--accent);
+  }
 
   &.default .text-wrapper {
     color: #ffffff;
@@ -77,5 +81,5 @@ export const Button = ({
 Button.propTypes = {
   text: PropTypes.string,
   icon: PropTypes.bool,
-  style: PropTypes.oneOf(["ghost", "default"]),
+  style: PropTypes.oneOf(["ghost", "default", "outline"]),
 };
