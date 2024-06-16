@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { usePlatform } from "../../hooks";
 
 const StyledDivider = styled.svg`
   .path {
@@ -10,12 +11,13 @@ const StyledDivider = styled.svg`
 `;
 
 export const Divider = (): JSX.Element => {
+  const platform = usePlatform();
   return (
     <StyledDivider
       fill="none"
       height="100"
       viewBox="0 0 1282 100"
-      width="1282"
+      width={platform === 'web' ? '1282' : "342"}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
