@@ -18,6 +18,12 @@ export const StyledCard = styled.div<{ platform: string }>`
     padding: 40px;
     position: relative;
     width: 1280px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 100%;
+      `}
   }
 
   & .content {
@@ -28,6 +34,13 @@ export const StyledCard = styled.div<{ platform: string }>`
     justify-content: center;
     position: relative;
     width: 1200px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        flex-direction: column;
+        width: 87%;
+      `}
   }
 
   & .txt {
@@ -61,6 +74,12 @@ export const StyledCard = styled.div<{ platform: string }>`
     position: relative;
     white-space: nowrap;
     width: fit-content;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        font-size: var(--headline-s-font-size);
+      `}
   }
 
   & .date {
@@ -94,6 +113,13 @@ export const StyledCard = styled.div<{ platform: string }>`
     object-fit: cover;
     position: relative;
     width: 500px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 310px;
+        height: 200px;
+      `}
   }
 
   & .icon {
