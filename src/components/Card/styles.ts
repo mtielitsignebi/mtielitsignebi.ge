@@ -19,6 +19,10 @@ export const StyledCard = styled.div<{ platform: string }>`
     position: relative;
     width: 1280px;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     ${({ platform }) =>
       platform !== "web" &&
       css`
