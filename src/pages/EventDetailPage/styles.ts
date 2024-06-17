@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const StyledEventDetailPage = styled.div`
   background-color: var(--background-300);
-  height: 2663px;
-  position: relative;
+  height: 2200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   & .overlap {
     height: 1450px;
-    left: 80px;
-    position: absolute;
-    top: 97px;
     width: 1280px;
+    position: relative;
   }
 
   & .event-description {
@@ -106,13 +106,10 @@ export const StyledEventDetailPage = styled.div`
 
   & .card {
     align-items: center;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     gap: 10px;
-    left: 80px;
     padding: 64px 0px;
-    position: absolute;
-    top: 1700px;
   }
 
   & .card-2 {
