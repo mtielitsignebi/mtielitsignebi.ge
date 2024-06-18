@@ -7,6 +7,8 @@ export const HeroSectionWrapper = styled.div<{ platform: string }>`
   flex-direction: column;
   gap: 40px;
   padding: 64px 0px;
+  position: relative;
+  overflow: hidden;
 
   ${({ platform }) =>
     platform !== "web" &&
@@ -15,39 +17,16 @@ export const HeroSectionWrapper = styled.div<{ platform: string }>`
     `}
 `;
 
-export const HeroImage = styled.div<{ platform: string }>`
-  background-image: url(https://c.animaapp.com/9E1pYK5V/img/heroimage-1.png);
-  background-position: 50% 50%;
-  background-size: cover;
-  height: 700px;
-  position: relative;
-  width: 100%;
-  max-width: 1280px;
-
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      height: 400px;
-    `}
-`;
-
-export const PlayIconWrapper = styled.div`
-  height: 64px !important;
-  position: absolute !important;
-  width: 64px !important;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
 export const HeroContent = styled.div<{ platform: string }>`
   align-items: center;
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   justify-content: center;
   padding: 0px 20px;
+  position: relative;
+  z-index: 2;
 
   ${({ platform }) =>
     platform === "web" &&
@@ -57,7 +36,7 @@ export const HeroContent = styled.div<{ platform: string }>`
 `;
 
 export const Heading = styled.p<{ platform: string }>`
-  color: #000d38;
+  color: #000;
   font-family: var(--headline-l-font-family);
   font-size: var(--headline-l-font-size);
   font-style: var(--headline-l-font-style);
@@ -74,4 +53,34 @@ export const Heading = styled.p<{ platform: string }>`
     css`
       font-size: var(--headline-m-font-size);
     `}
+`;
+
+export const VideoWrapper = styled.div<{ platform: string }>`
+  width: 100%;
+  height: 100%;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  ${({ platform }) =>
+    platform !== "web" &&
+    css`
+      width: 90%;
+      max-width: 600px;
+    `}
+
+  .video-js {
+    display: block !important;
+  }
+
+  .vjs-big-play-button {
+    cursor: pointer;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 24px;
+        height: 24px;
+      `}
+  }
 `;
