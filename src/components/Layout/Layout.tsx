@@ -1,7 +1,8 @@
 import React, { ReactNode } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { StyledLayout } from "./styles";
+import * as S from "./styles";
+import { Container } from "@mantine/core";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,15 +10,12 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <StyledLayout>
+    <S.Wrapper>
       <Header />
-      <div className="content">{children}</div>
-      <Footer
-      // buttonIcon={<Facebookicon1 className="facebookicon-1" />}
-      // className="footer-instance"
-      // logo="https://c.animaapp.com/PUxN8WIz/img/logo-5.svg"
-      // override={<Instagramicon1 className="instagramicon-instance" />}
-      />
-    </StyledLayout>
+      <Container fluid mt="64px">
+        {children}
+      </Container>
+      <Footer />
+    </S.Wrapper>
   );
 };
