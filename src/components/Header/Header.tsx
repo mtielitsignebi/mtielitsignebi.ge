@@ -1,16 +1,31 @@
 import { useState } from "react";
-import { Usericon1 } from "../../icons/Usericon1";
-import { Button } from "../Button";
+import {
+  Button,
+  Center,
+  Divider,
+  Drawer,
+  Group,
+  Space,
+  Text,
+} from "@mantine/core";
+import { useLocation, useNavigate } from "react-router";
+import { usePlatform } from "../../hooks";
 import {
   StyledHeader,
   Logo,
-  Actions,
-  Hamburger,
-  Menu,
-  MenuItem,
+  LeftSection,
+  CenterSection,
+  RightSection,
+  MobileMenuButton,
+  StyledDrawer,
+  DrawerButton,
 } from "./styles";
-import { useLocation, useNavigate } from "react-router";
-import { usePlatform } from "../../hooks";
+
+const menuItems = [
+  { path: "/home", label: "მთავარი" },
+  { path: "/about", label: "ჩვენ შესახებ" },
+  { path: "/events", label: "სიახლეები" },
+];
 
 export const Header = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +34,7 @@ export const Header = (): JSX.Element => {
   const platform = usePlatform();
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => !prev);
   };
 
   const reloadPage = () => {
@@ -28,69 +43,136 @@ export const Header = (): JSX.Element => {
   };
 
   return (
-    <StyledHeader platform={platform} className="header">
-      <div onClick={reloadPage}>
+    <StyledHeader platform={platform}>
+      <LeftSection>
         <Logo
-          className="logo"
           alt="Logo"
-          src={"https://c.animaapp.com/9E1pYK5V/img/logo-2.svg"}
+          src="https://c.animaapp.com/9E1pYK5V/img/logo-2.svg"
+          onClick={reloadPage}
         />
-      </div>
-      <Actions platform={platform} className="actions">
-        <div onClick={() => navigate(`/login`)}>
-          <Button
-            override={<Usericon1 className="usericon-1" />}
-            style="outline"
-            text="შესვლა"
-          />
-        </div>
+      </LeftSection>
+      {platform === "web" ? (
+        <>
+          <CenterSection>
+            {menuItems.map((item) => (
+              <Button
+                key={item.path}
+                variant={location.pathname === item.path ? "filled" : "subtle"}
+                onClick={() => navigate(item.path)}
+                radius="8px"
+                color="var(--background-100)"
+                styles={{
+                  label: {
+                    color: "var(--text)",
+                    fontFamily: "var(--body-m-regular-font-family)",
+                    fontSize: "var(--body-m-regular-font-size)",
+                    fontStyle: "var(--body-m-regular-font-style)",
+                    fontWeight: "var(--body-m-regular-font-weight)",
+                  },
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
+          </CenterSection>
 
-        <div onClick={() => navigate(`/donate`)}>
-          <Button icon={false} style="default" text="დონაცია" />
-        </div>
-      </Actions>
-      <Hamburger platform={platform} onClick={toggleMenu}>
-        <span />
-        <span />
-        <span />
-      </Hamburger>
-      <Menu platform={platform} isOpen={menuOpen} className="menu">
-        <MenuItem
-          onClick={() => navigate(`/home`)}
-          className={`item ${
-            location.pathname === "/home" ? "MenuItemActive" : ""
-          }`}
-        >
-          მთავარი
-        </MenuItem>
-        <MenuItem
-          onClick={() => navigate(`/about`)}
-          className={`item ${
-            location.pathname === "/about" ? "MenuItemActive" : ""
-          }`}
-        >
-          ჩვენ შესახებ
-        </MenuItem>
-        <MenuItem
-          onClick={() => navigate(`/events`)}
-          className={`item ${
-            location.pathname === "/events" ? "MenuItemActive" : ""
-          }`}
-        >
-          სიახლეები
-        </MenuItem>
-        {platform !== "web" && (
+          <RightSection>
+            <Button
+              variant="filled"
+              onClick={() => navigate(`/donate`)}
+              radius="8px"
+              color="var(--accent)"
+              styles={{
+                label: {
+                  color: "#ffffff",
+                  fontFamily: "var(--body-m-regular-font-family)",
+                  fontSize: "var(--body-m-regular-font-size)",
+                  fontStyle: "var(--body-m-regular-font-style)",
+                  fontWeight: "var(--body-m-regular-font-weight)",
+                },
+              }}
+            >
+              დონაცია
+            </Button>
+          </RightSection>
+        </>
+      ) : (
+        <MobileMenuButton opened={menuOpen} onClick={toggleMenu} size="sm" />
+      )}
+      <Drawer
+        opened={menuOpen}
+        onClose={toggleMenu}
+        padding="md"
+        position="right"
+        offset="64px 0"
+        withCloseButton={false}
+        styles={{
+          body: {
+            backgroundColor: "#6ab271",
+            paddingBottom: 48,
+          },
+        }}
+        transitionProps={{
+          transition: "fade-down",
+          duration: 200,
+          timingFunction: "linear",
+        }}
+      >
+        {menuItems.map((item) => (
           <>
             <Button
-              override={<Usericon1 className="usericon-1" />}
-              style="ghost"
-              text="შესვლა"
-            />
+              key={item.path}
+              fullWidth
+              mt="sm"
+              justify="flex-start"
+              variant={location.pathname === item.path ? "filled" : "subtle"}
+              onClick={() => {
+                navigate(item.path);
+                toggleMenu();
+              }}
+              radius="8px"
+              color="var(--background-100)"
+              styles={{
+                label: {
+                  color: "var(--text)",
+                  fontFamily: "var(--body-m-regular-font-family)",
+                  fontSize: "var(--body-m-regular-font-size)",
+                  fontStyle: "var(--body-m-regular-font-style)",
+                  fontWeight: "var(--body-m-regular-font-weight)",
+                },
+              }}
+            >
+              {item.label}
+            </Button>
 
-            <Button icon={false} style="default" text="დონაცია" />
+            <Divider color="#78D080" mt="sm" />
           </>
-        )}
-      </Menu>
+        ))}
+
+        <Space h="lg" />
+        <Button
+          fullWidth
+          variant="filled"
+          onClick={() => navigate(`/donate`)}
+          color="var(--accent)"
+          mt="xl"
+          styles={{
+            label: {
+              color: "#ffffff",
+              fontFamily: "var(--body-m-regular-font-family)",
+              fontSize: "var(--body-m-regular-font-size)",
+              fontStyle: "var(--body-m-regular-font-style)",
+              fontWeight: "var(--body-m-regular-font-weight)",
+            },
+          }}
+        >
+          დონაცია
+        </Button>
+
+        <Center mt="xl">
+          <Text size="sm">© 2022-2024 ყველა უფლება დაცულია.</Text>
+        </Center>
+      </Drawer>
     </StyledHeader>
   );
 };
