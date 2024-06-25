@@ -1,25 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledSubscribeSection = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 64px 0px;
+export const StyledSubscribeSection = styled.div<{ platform: string }>`
+  margin: 64px 0px;
+  background-color: var(--background-200);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  width: 1280px;
 
-  & .card-2 {
-    align-items: flex-start;
-    background-color: var(--background-200);
-    border-radius: 20px;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    padding: 40px;
-    position: relative;
-    width: 1280px;
-  }
-
-  & .content-2 {
+  & .SBC-wrapper {
     align-items: center;
     display: flex;
     flex: 0 0 auto;
@@ -29,7 +18,7 @@ export const StyledSubscribeSection = styled.div`
     width: 1200px;
   }
 
-  & .txt-2 {
+  & .SBC-content {
     align-items: flex-start;
     display: flex;
     flex: 1;
@@ -39,16 +28,7 @@ export const StyledSubscribeSection = styled.div`
     position: relative;
   }
 
-  & .heading {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 8px;
-    position: relative;
-  }
-
-  & .title-3 {
+  & .SBC-heading {
     color: #000d38;
     font-family: var(--headline-l-font-family);
     font-size: var(--headline-l-font-size);
@@ -62,7 +42,7 @@ export const StyledSubscribeSection = styled.div`
     width: fit-content;
   }
 
-  & .paragraph {
+  & .SBC-text {
     align-self: stretch;
     color: #000d38cc;
     font-family: "Noto Serif Georgian", Helvetica;
@@ -73,18 +53,8 @@ export const StyledSubscribeSection = styled.div`
     position: relative;
   }
 
-  & .form {
-    align-items: flex-start;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    padding: 24px 0px 0px;
-    position: relative;
-    width: 613.33px;
-  }
-
-  & .form-2 {
+  & .SBC-form-wrapper {
+    padding-top: 24px;
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
@@ -93,29 +63,14 @@ export const StyledSubscribeSection = styled.div`
     position: relative;
   }
 
-  & .input-instance {
-    flex: 0 0 auto !important;
-  }
-
-  & .pencilicon-2 {
-    height: 20px !important;
-    position: relative !important;
-    width: 20px !important;
-  }
-
-  & .button-3 {
-    align-self: stretch !important;
-    height: unset !important;
-  }
-
-  & .image-2 {
+  & .SBC-image {
     height: 400px;
     object-fit: cover;
     position: relative;
     width: 500px;
   }
 
-  & .envelope-icon-wrapper {
+  & .SBC-envelope-icon-wrapper {
     align-items: center;
     background-color: var(--white);
     border-radius: 100px;
@@ -130,7 +85,7 @@ export const StyledSubscribeSection = styled.div`
     width: 72px;
   }
 
-  & .envelope-icon {
+  & .SBC-envelope-icon {
     height: 40px !important;
     position: relative !important;
     width: 40px !important;
