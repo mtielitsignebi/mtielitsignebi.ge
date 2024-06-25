@@ -35,8 +35,6 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
       `}
   }
 
-  }
-
   & .SBC-content-heading {
     color: #000d38;
     font-family: var(--headline-l-font-family);
@@ -160,6 +158,5 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
         top: -24px;
         left: 20px;
       `}
-  }
   }
 `;
