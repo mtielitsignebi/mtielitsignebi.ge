@@ -16,12 +16,12 @@ export const SubscribeCard = ({ platform }: Props): JSX.Element => {
     <StyledSubscribeSection platform={platform}>
       <div className="SBC-wrapper">
         <div className="SBC-content">
-          <h3 className="SBC-heading">გამოიწერე სიახლეები</h3>
-          <p className="SBC-text">
+          <h3 className="SBC-content-heading">გამოიწერე სიახლეები</h3>
+          <p className="SBC-content-text">
             მიიღე ინფორმაცია ჩვენი დაგეგმილი და შესრულებული მოგზაურობების
             შესახებ
           </p>
-          <div className="SBC-form-wrapper">
+          <div className="SBC-form-container">
             <Input
               className=""
               label="მეილი"

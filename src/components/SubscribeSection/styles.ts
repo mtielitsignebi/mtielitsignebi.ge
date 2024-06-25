@@ -6,7 +6,7 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
   border-radius: 20px;
   padding: 40px;
   position: relative;
-  width: 1280px;
+  max-width: 1280px;
 
   & .SBC-wrapper {
     align-items: center;
@@ -15,7 +15,13 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     gap: 64px;
     justify-content: center;
     position: relative;
-    width: 1200px;
+    max-width: 1200px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        flex-direction: column;
+      `}
   }
 
   & .SBC-content {
@@ -28,7 +34,7 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     position: relative;
   }
 
-  & .SBC-heading {
+  & .SBC-content-heading {
     color: #000d38;
     font-family: var(--headline-l-font-family);
     font-size: var(--headline-l-font-size);
@@ -42,7 +48,7 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     width: fit-content;
   }
 
-  & .SBC-text {
+  & .SBC-content-text {
     align-self: stretch;
     color: #000d38cc;
     font-family: "Noto Serif Georgian", Helvetica;
@@ -53,7 +59,7 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     position: relative;
   }
 
-  & .SBC-form-wrapper {
+  & .SBC-form-container {
     padding-top: 24px;
     align-items: center;
     display: inline-flex;
@@ -61,6 +67,12 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     gap: 8px;
     justify-content: center;
     position: relative;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        flex-direction: column;
+      `}
   }
 
   & .SBC-image {
