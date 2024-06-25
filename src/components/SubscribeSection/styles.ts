@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const StyledSubscribeSection = styled.div<{ platform: string }>`
+  display: flex;
+  gap: 64px;
+  align-items: center;
   margin: 64px 0px;
   background-color: var(--background-200);
   border-radius: 20px;
@@ -8,21 +11,13 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
   position: relative;
   max-width: 1280px;
 
-  & .SBC-wrapper {
-    align-items: center;
-    display: flex;
-    flex: 0 0 auto;
-    gap: 64px;
-    justify-content: center;
-    position: relative;
-    max-width: 1200px;
-
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        flex-direction: column;
-      `}
-  }
+  ${({ platform }) =>
+    platform !== "web" &&
+    css`
+      flex-direction: column;
+      max-width: 87%;
+      padding: 40px 16px 16px 16px;
+    `}
 
   & .SBC-content {
     align-items: flex-start;
@@ -32,6 +27,14 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     flex-grow: 1;
     gap: 20px;
     position: relative;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 100%;
+      `}
+  }
+
   }
 
   & .SBC-content-heading {
@@ -46,26 +49,50 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     position: relative;
     white-space: nowrap;
     width: fit-content;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        font-family: var(--headline-s-font-family);
+        font-size: var(--headline-s-font-size);
+        font-style: var(--headline-s-font-style);
+        font-weight: var(--headline-s-font-weight);
+        letter-spacing: var(--headline-s-letter-spacing);
+        line-height: var(--headline-s-line-height);
+        line-height: 19px;
+      `}
   }
 
   & .SBC-content-text {
     align-self: stretch;
     color: #000d38cc;
-    font-family: "Noto Serif Georgian", Helvetica;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 22.4px;
+    font-family: var(--body-m-regular-font-family);
+    font-size: var(--body-m-regular-font-size);
+    font-weight: var(--body-m-regular-font-weight);
+    letter-spacing: var(--body-m-regular-letter-spacing);
+    line-height: var(--body-m-regular-line-height);
     position: relative;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        font-family: var(--body-s-regular-font-family);
+        font-size: var(--body-s-regular-font-size);
+        font-weight: var(--body-s-regular-font-weight);
+        letter-spacing: var(--body-s-regular-letter-spacing);
+        line-height: var(--body-s-regular-line-height);
+        line-height: 19px;
+      `}
   }
 
   & .SBC-form-container {
+    width: 100%;
     padding-top: 24px;
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
     gap: 8px;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
 
     ${({ platform }) =>
@@ -75,14 +102,42 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
       `}
   }
 
+  & .SBC-form-input {
+    width: 342px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 100%;
+      `}
+  }
+
+  & .SBC-form-button {
+    width: 140px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 100%;
+      `}
+  }
+
   & .SBC-image {
     height: 400px;
     object-fit: cover;
     position: relative;
     width: 500px;
+
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        width: 310px;
+        height: 200px;
+        border-radius: 23px;
+      `}
   }
 
-  & .SBC-envelope-icon-wrapper {
+  & .SBC-envelope-icon {
     align-items: center;
     background-color: var(--white);
     border-radius: 100px;
@@ -91,15 +146,20 @@ export const StyledSubscribeSection = styled.div<{ platform: string }>`
     justify-content: center;
     left: 40px;
     overflow: hidden;
-    padding: 16px;
     position: absolute;
+    padding: 16px;
     top: -36px;
     width: 72px;
-  }
 
-  & .SBC-envelope-icon {
-    height: 40px !important;
-    position: relative !important;
-    width: 40px !important;
+    ${({ platform }) =>
+      platform !== "web" &&
+      css`
+        padding: 5px;
+        width: 48px;
+        height: 48px;
+        top: -24px;
+        left: 20px;
+      `}
+  }
   }
 `;

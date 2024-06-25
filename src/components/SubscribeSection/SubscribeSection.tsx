@@ -14,7 +14,6 @@ interface Props {
 export const SubscribeCard = ({ platform }: Props): JSX.Element => {
   return (
     <StyledSubscribeSection platform={platform}>
-      <div className="SBC-wrapper">
         <div className="SBC-content">
           <h3 className="SBC-content-heading">გამოიწერე სიახლეები</h3>
           <p className="SBC-content-text">
@@ -23,7 +22,7 @@ export const SubscribeCard = ({ platform }: Props): JSX.Element => {
           </p>
           <div className="SBC-form-container">
             <Input
-              className=""
+              className="SBC-form-input"
               label="მეილი"
               message={false}
               override={<Pencilicon2 className="" />}
@@ -31,7 +30,7 @@ export const SubscribeCard = ({ platform }: Props): JSX.Element => {
               icon={true}
             />
             <Button
-              className=""
+              className="SBC-form-button"
               icon={false}
               style="default"
               text="გამოიწერე"
@@ -43,10 +42,8 @@ export const SubscribeCard = ({ platform }: Props): JSX.Element => {
           alt="Image"
           src="https://c.animaapp.com/X9C4eF1s/img/image-3.png"
         />
-      </div>
-      <div className="SBC-envelope-icon-wrapper">
-        <Envelopeicon1 className="SBC-envelope-icon" />
-      </div>
+        <Envelopeicon1 className="SBC-envelope-icon" size={platform !== 'web' ? '40' : '40'
+        } />
     </StyledSubscribeSection>
   );
 };

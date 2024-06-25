@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Usericon1 } from "../../icons/Usericon1";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface Props {
   text: string;
@@ -24,7 +24,7 @@ const StyledButton = styled.button`
   overflow: hidden;
   padding: 10px 24px;
   position: relative;
-  width: 140px;
+  width: 100%;
 
   & .text-wrapper {
     font-family: var(--label-m-font-family);
@@ -73,7 +73,7 @@ export const Button = ({
     <StyledButton className={`button ${style} ${className}`}>
       {icon && <>{override}</>}
 
-      <div className={`text-wrapper ${divClassName}`}>{text}</div>
+      <div className={`text-wrapper ${divClassName ?? ''}`}>{text}</div>
     </StyledButton>
   );
 };

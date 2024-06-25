@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface Props {
   className: any;
+  size: string;
 }
 
 const StyledEnvelopeicon1 = styled.svg`
@@ -14,14 +15,14 @@ const StyledEnvelopeicon1 = styled.svg`
   }
 `;
 
-export const Envelopeicon1 = ({ className }: Props): JSX.Element => {
+export const Envelopeicon1 = ({ className, size }: Props): JSX.Element => {
   return (
     <StyledEnvelopeicon1
       className={`envelopeicon-1 ${className}`}
       fill="none"
-      height="40"
-      viewBox="0 0 40 40"
-      width="40"
+      height={size}
+      viewBox={`0 0 40 40`}
+      width={size}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
