@@ -131,7 +131,9 @@ export const Input = ({
       </div>
       {message && <div className="message">Message</div>}
 
-      {state.state === "focused" && <div className="text-wrapper-3">{label}</div>}
+      {state.state === "focused" && (
+        <div className="text-wrapper-3">{label}</div>
+      )}
     </StyledInput>
   );
 };

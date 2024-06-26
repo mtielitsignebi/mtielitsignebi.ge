@@ -1,11 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Platform } from "../../hooks/usePlatform";
-import { StyledSubscribeSection } from "./styles";
+import {
+  Content,
+  EnvelopeIcon,
+  Form,
+  Heading,
+  Image,
+  StyledSubscribeSection,
+  Text,
+} from "./styles";
 import { Input } from "../Input";
 import { Button } from "../Button";
 import { Pencilicon2 } from "../../icons/Pencilicon2";
-import { Envelopeicon1 } from "../../icons/Envelopeicon1";
 
 interface Props {
   platform: string;
@@ -14,36 +21,34 @@ interface Props {
 export const SubscribeCard = ({ platform }: Props): JSX.Element => {
   return (
     <StyledSubscribeSection platform={platform}>
-        <div className="SBC-content">
-          <h3 className="SBC-content-heading">გამოიწერე სიახლეები</h3>
-          <p className="SBC-content-text">
-            მიიღე ინფორმაცია ჩვენი დაგეგმილი და შესრულებული მოგზაურობების
-            შესახებ
-          </p>
-          <div className="SBC-form-container">
-            <Input
-              className="SBC-form-input"
-              label="მეილი"
-              message={false}
-              override={<Pencilicon2 className="" />}
-              stateProp="default"
-              icon={true}
-            />
-            <Button
-              className="SBC-form-button"
-              icon={false}
-              style="default"
-              text="გამოიწერე"
-            />
-          </div>
-        </div>
-        <img
-          className="SBC-image"
-          alt="Image"
-          src="https://c.animaapp.com/X9C4eF1s/img/image-3.png"
-        />
-        <Envelopeicon1 className="SBC-envelope-icon" size={platform !== 'web' ? '40' : '40'
-        } />
+      <Content platform={platform}>
+        <Heading platform={platform}>გამოიწერე სიახლეები</Heading>
+        <Text platform={platform}>
+          მიიღე ინფორმაცია ჩვენი დაგეგმილი და შესრულებული მოგზაურობების შესახებ
+        </Text>
+        <Form platform={platform}>
+          <Input
+            className="form-input"
+            label="მეილი"
+            message={false}
+            override={<Pencilicon2 className="" />}
+            stateProp="default"
+            icon={true}
+          />
+          <Button
+            className="form-button"
+            icon={false}
+            style="default"
+            text="გამოიწერე"
+          />
+        </Form>
+      </Content>
+      <Image
+        platform={platform}
+        alt="Image"
+        src="https://c.animaapp.com/X9C4eF1s/img/image-3.png"
+      />
+      <EnvelopeIcon platform={platform} />
     </StyledSubscribeSection>
   );
 };

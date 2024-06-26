@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 interface Props {
-  className: any;
-  size: string;
+  className?: any;
 }
 
-const StyledEnvelopeicon1 = styled.svg`
+export const StyledEnvelopeicon1 = styled.svg`
   & .path {
     stroke: #6ab271;
     stroke-linecap: round;
@@ -15,14 +14,14 @@ const StyledEnvelopeicon1 = styled.svg`
   }
 `;
 
-export const Envelopeicon1 = ({ className, size }: Props): JSX.Element => {
+export const Envelopeicon1 = ({ className}: Props): JSX.Element => {
   return (
     <StyledEnvelopeicon1
-      className={`envelopeicon-1 ${className}`}
+      className={className}
       fill="none"
-      height={size}
+      height="40"
       viewBox={`0 0 40 40`}
-      width={size}
+      width="40"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
