@@ -2,9 +2,10 @@ import styled, { css } from "styled-components";
 import { ScheduleCard } from "../ScheduleCard";
 
 export const Container = styled.div<{ platform: string }>`
-  height: 771px;
+  height: 486px;
   position: relative;
   width: 1280px;
+  margin-top: 64px;
 
   ${({ platform }) =>
     platform !== "web" &&
