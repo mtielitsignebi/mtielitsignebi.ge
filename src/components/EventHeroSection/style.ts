@@ -38,6 +38,7 @@ export const ScheduleCardInstance = styled(ScheduleCard)<{ platform: string }>`
   ${({ platform }) =>
     platform !== "web" &&
     css`
+      width: 100%;
       top: 320px;
       left: 0;
     `}
