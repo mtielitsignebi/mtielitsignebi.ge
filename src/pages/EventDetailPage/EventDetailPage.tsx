@@ -13,7 +13,6 @@ export const EventDetailPage = (): JSX.Element => {
       <StyledEventDetailPage>
         <div className="overlap">
           <EventHeroSection
-            className="event-hero-section-instance"
             platform={platform}
           />
           <div className="event-description">

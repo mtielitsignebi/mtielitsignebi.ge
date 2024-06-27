@@ -90,12 +90,6 @@ export const StyledEventDetailPage = styled.div`
     line-height: var(--body-m-regular-line-height);
   }
 
-  & .event-hero-section-instance {
-    left: 0 !important;
-    position: absolute !important;
-    top: 0 !important;
-  }
-
   & .divider {
     height: 100px !important;
     left: 79px !important;

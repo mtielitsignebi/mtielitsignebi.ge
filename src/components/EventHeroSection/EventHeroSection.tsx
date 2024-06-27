@@ -4,20 +4,17 @@ import * as SC from "./style";
 
 interface Props {
   platform: Platform;
-  className: any;
 }
 
-export const EventHeroSection = ({
-  platform,
-  className,
-}: Props): JSX.Element => {
+export const EventHeroSection = ({ platform }: Props): JSX.Element => {
   return (
-    <SC.Container className={className}>
+    <SC.Container platform={platform}>
       <SC.Image
+        platform={platform}
         alt="Image"
         src="https://c.animaapp.com/X9C4eF1s/img/image-2.png"
       />
-      <SC.ScheduleCardInstance />
+      <SC.ScheduleCardInstance platform={platform} />
     </SC.Container>
   );
 };
