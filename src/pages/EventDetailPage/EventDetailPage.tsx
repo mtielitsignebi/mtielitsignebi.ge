@@ -12,6 +12,10 @@ export const EventDetailPage = (): JSX.Element => {
     <Layout>
       <StyledEventDetailPage>
         <div className="overlap">
+          <EventHeroSection
+            className="event-hero-section-instance"
+            platform={platform}
+          />
           <div className="event-description">
             <div className="div-2">
               <div className="text-wrapper-4">სათაური</div>
@@ -81,13 +85,9 @@ export const EventDetailPage = (): JSX.Element => {
               </div>
             </div>
           </div>
-          <EventHeroSection
-            className="event-hero-section-instance"
-            platform="web"
-          />
         </div>
         <Divider />
-        <SubscribeCard platform={platform}/>
+        <SubscribeCard platform={platform} />
       </StyledEventDetailPage>
     </Layout>
   );

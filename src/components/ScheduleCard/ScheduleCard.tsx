@@ -4,7 +4,7 @@ import { Calendaricon } from "../../icons/Calendaricon";
 import { Locationicon3 } from "../../icons/Locationicon3";
 
 interface Props {
-  className: any;
+  className?: any;
 }
 
 const StyledScheduleCard = styled.div`
@@ -114,7 +114,7 @@ const StyledScheduleCard = styled.div`
 
 export const ScheduleCard = ({ className }: Props): JSX.Element => {
   return (
-    <StyledScheduleCard className={`schedule-card ${className}`}>
+    <StyledScheduleCard className={className}>
       <div className="title">შემდეგი მოგზაურობა</div>
       <div className="schedule">
         <div className="item-2">
