@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Envelopeicon1 } from "../../icons/Envelopeicon1/Envelopeicon1";
+import { IconEnvelope } from "../../icons";
 
 export const Content = styled.div<{ platform: string }>`
   align-items: flex-start;
@@ -116,7 +116,7 @@ export const Image = styled.img<{ platform: string }>`
     `}
 `;
 
-export const EnvelopeIcon = styled(Envelopeicon1)<{ platform: string }>`
+export const EnvelopeIcon = styled(IconEnvelope)<{ platform: string }>`
   align-items: center;
   background-color: var(--white);
   border-radius: 100px;
@@ -141,7 +141,7 @@ export const EnvelopeIcon = styled(Envelopeicon1)<{ platform: string }>`
     `}
 `;
 
-export const StyledSubscribeSection = styled.div<{ platform: string }>`
+export const Container = styled.div<{ platform: string }>`
   display: flex;
   gap: 64px;
   align-items: center;
