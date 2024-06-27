@@ -4,6 +4,7 @@ import { Input } from "../Input";
 import { Button } from "../Button";
 import { Pencilicon2 } from "../../icons/Pencilicon2";
 import { Platform } from "../../hooks/usePlatform";
+import { IconEnvelope } from "../../icons";
 
 interface Props {
   platform: Platform;
@@ -39,7 +40,9 @@ export const SubscribeCard = ({ platform }: Props): JSX.Element => {
         alt="Image"
         src="https://c.animaapp.com/X9C4eF1s/img/image-3.png"
       />
-      <SC.EnvelopeIcon platform={platform} />
+      <SC.IconWrapper platform={platform}>
+        <IconEnvelope />
+      </SC.IconWrapper>
     </SC.Container>
   );
 };
