@@ -20,6 +20,7 @@ const StyledInput = styled.div`
   gap: 8px;
   justify-content: center;
   position: relative;
+  width: 100%;
 
   & .input-field {
     background-color: var(--primitives-white);
@@ -27,7 +28,7 @@ const StyledInput = styled.div`
     display: flex;
     height: 52px;
     position: relative;
-    width: 342px;
+    width: 100%;
   }
 
   & .txt {
@@ -39,7 +40,7 @@ const StyledInput = styled.div`
     letter-spacing: var(--label-s-bold-letter-spacing);
     line-height: var(--label-s-bold-line-height);
     position: relative;
-    width: 282px;
+    width: 82%;
   }
 
   & .label {
@@ -130,7 +131,9 @@ export const Input = ({
       </div>
       {message && <div className="message">Message</div>}
 
-      {state.state === "focused" && <div className="text-wrapper-3">{label}</div>}
+      {state.state === "focused" && (
+        <div className="text-wrapper-3">{label}</div>
+      )}
     </StyledInput>
   );
 };

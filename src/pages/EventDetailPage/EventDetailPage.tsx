@@ -1,14 +1,13 @@
 import React from "react";
-import { Button } from "../../components/Button";
 import { EventHeroSection } from "../../components/EventHeroSection";
-import { Input } from "../../components/Input";
-import { Envelopeicon1 } from "../../icons/Envelopeicon1";
-import { Pencilicon2 } from "../../icons/Pencilicon2";
 import { Divider } from "../../icons/Divider";
 import { Layout } from "../../components/Layout";
 import { StyledEventDetailPage } from "./styles";
+import { SubscribeCard } from "../../components/SubscribeSection";
+import { usePlatform } from "../../hooks";
 
 export const EventDetailPage = (): JSX.Element => {
+  const platform = usePlatform();
   return (
     <Layout>
       <StyledEventDetailPage>
@@ -88,47 +87,7 @@ export const EventDetailPage = (): JSX.Element => {
           />
         </div>
         <Divider />
-        <div className="card">
-          <div className="card-2">
-            <div className="content-2">
-              <div className="txt-2">
-                <div className="heading">
-                  <div className="title-3">გამოიწერე სიახლეები</div>
-                </div>
-                <p className="paragraph">
-                  მიიღე ინფორმაცია ჩვენი დაგეგმილი და შესრულებული მოგზაურობების
-                  შესახებ
-                </p>
-                <div className="form">
-                  <div className="form-2">
-                    <Input
-                      className="input-instance"
-                      label="მეილი"
-                      message={false}
-                      override={<Pencilicon2 className="pencilicon-2" />}
-                      stateProp="default"
-                      icon={true}
-                    />
-                    <Button
-                      className="button-3"
-                      icon={false}
-                      style="default"
-                      text="გამოიწერე"
-                    />
-                  </div>
-                </div>
-              </div>
-              <img
-                className="image-2"
-                alt="Image"
-                src="https://c.animaapp.com/X9C4eF1s/img/image-3.png"
-              />
-            </div>
-            <div className="envelope-icon-wrapper">
-              <Envelopeicon1 className="envelope-icon" />
-            </div>
-          </div>
-        </div>
+        <SubscribeCard platform={platform}/>
       </StyledEventDetailPage>
     </Layout>
   );

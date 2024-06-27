@@ -12,7 +12,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <S.Wrapper>
       <Header />
-      <Container fluid mt="64px">
+      <Container fluid mt="64px" px={0}>
         {children}
       </Container>
       <Footer />
