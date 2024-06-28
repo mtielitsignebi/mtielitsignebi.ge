@@ -116,7 +116,7 @@ export const Image = styled.img<{ platform: string }>`
     `}
 `;
 
-export const EnvelopeIcon = styled(IconEnvelope)<{ platform: string }>`
+export const IconWrapper = styled.span<{ platform: string }>`
   align-items: center;
   background-color: var(--white);
   border-radius: 100px;

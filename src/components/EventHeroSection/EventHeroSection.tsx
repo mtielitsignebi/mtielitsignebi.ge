@@ -1,51 +1,20 @@
-import PropTypes from "prop-types";
 import React from "react";
-import { ScheduleCard } from "../ScheduleCard";
-import styled from "styled-components";
+import { Platform } from "../../hooks/usePlatform";
+import * as SC from "./style";
 
 interface Props {
-  platform: "web";
-  className: any;
+  platform: Platform;
 }
 
-const StyledEventHeroSection = styled.div`
-  height: 771px;
-  position: relative;
-  width: 1280px;
-
-  & .overlap-group {
-    height: 637px;
-    position: relative;
-    top: 64px;
-  }
-
-  & .image {
-    height: 486px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 1280px;
-  }
-
-  & .schedule-card-instance {
-    left: 880px !important;
-    position: absolute !important;
-    top: 361px !important;
-  }
-`;
-
-export const EventHeroSection = ({ platform, className }: Props): JSX.Element => {
+export const EventHeroSection = ({ platform }: Props): JSX.Element => {
   return (
-    <StyledEventHeroSection className={`event-hero-section ${className}`}>
-      <div className="overlap-group">
-        <img className="image" alt="Image" src="https://c.animaapp.com/X9C4eF1s/img/image-2.png" />
-        <ScheduleCard className="schedule-card-instance" />
-      </div>
-    </StyledEventHeroSection>
+    <SC.Container platform={platform}>
+      <SC.Image
+        platform={platform}
+        alt="Image"
+        src="https://c.animaapp.com/X9C4eF1s/img/image-2.png"
+      />
+      <SC.ScheduleCardInstance platform={platform} />
+    </SC.Container>
   );
-};
-
-EventHeroSection.propTypes = {
-  platform: PropTypes.oneOf(["web"]),
 };
