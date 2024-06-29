@@ -8,10 +8,10 @@
     "build": "react-scripts build",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "purge": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+    "purge": "rimraf node_modules"
   },
   "dependencies": {
-    "@etlyn/control-x": "latest",
+    "@etlyn/control-x": "0.0.16",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -77,6 +77,7 @@
     "storybook": "^7.0.3",
     "styled-components": "^6.1.1",
     "typescript": "^4.9.5",
+    "rimraf": "^5.0.7",
     "web-vitals": "^2.1.4"
   },
   "browserslist": {
