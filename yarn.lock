@@ -1498,10 +1498,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@etlyn/control-x@0.0.16":
-  version "0.0.16"
-  resolved "https://npm.pkg.github.com/download/@etlyn/control-x/0.0.16/b786ff911fdd63c245fe52719241e43b692fc6b7#b786ff911fdd63c245fe52719241e43b692fc6b7"
-  integrity sha512-Qdg8l+37ZUfkcYTT0Kme6n7KBjOWuAPUR2aAnatN2bpyqCU6Q+w0IwmmhYts8pMzIZgFfwHaBrP34DUgh9/1zw==
+"@etlyn/control-x@0.0.17":
+  version "0.0.17"
+  resolved "https://npm.pkg.github.com/download/@etlyn/control-x/0.0.17/babaedbd168a58deb4ccd53309a213f2d7eead50#babaedbd168a58deb4ccd53309a213f2d7eead50"
+  integrity sha512-lZzgLMH7QPSjaMneiNFRRBLY+D1n3gcsGFfcrqmWcTaqIE2wR9NTxW0MIpmVgAjLodSP0CrTIXEvzVMIjSKPFA==
   dependencies:
     "@heroicons/react" "^2.1.1"
     "@mantine/carousel" "^7.6.1"
