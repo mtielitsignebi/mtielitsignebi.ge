@@ -10,11 +10,9 @@ export const Content = styled.div<{ platform: string }>`
   gap: 20px;
   position: relative;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 100%;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Heading = styled.h3<{ platform: string }>`
@@ -30,17 +28,15 @@ export const Heading = styled.h3<{ platform: string }>`
   white-space: nowrap;
   width: fit-content;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      font-family: var(--headline-s-font-family);
-      font-size: var(--headline-s-font-size);
-      font-style: var(--headline-s-font-style);
-      font-weight: var(--headline-s-font-weight);
-      letter-spacing: var(--headline-s-letter-spacing);
-      line-height: var(--headline-s-line-height);
-      line-height: 19px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    font-family: var(--headline-s-font-family);
+    font-size: var(--headline-s-font-size);
+    font-style: var(--headline-s-font-style);
+    font-weight: var(--headline-s-font-weight);
+    letter-spacing: var(--headline-s-letter-spacing);
+    line-height: var(--headline-s-line-height);
+    line-height: 19px;
+  }
 `;
 
 export const Text = styled.p<{ platform: string }>`
@@ -53,16 +49,14 @@ export const Text = styled.p<{ platform: string }>`
   line-height: var(--body-m-regular-line-height);
   position: relative;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      font-family: var(--body-s-regular-font-family);
-      font-size: var(--body-s-regular-font-size);
-      font-weight: var(--body-s-regular-font-weight);
-      letter-spacing: var(--body-s-regular-letter-spacing);
-      line-height: var(--body-s-regular-line-height);
-      line-height: 19px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    font-family: var(--body-s-regular-font-family);
+    font-size: var(--body-s-regular-font-size);
+    font-weight: var(--body-s-regular-font-weight);
+    letter-spacing: var(--body-s-regular-letter-spacing);
+    line-height: var(--body-s-regular-line-height);
+    line-height: 19px;
+  }
 `;
 
 export const Form = styled.div<{ platform: string }>`
@@ -75,29 +69,23 @@ export const Form = styled.div<{ platform: string }>`
   justify-content: flex-start;
   position: relative;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      flex-direction: column;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    flex-direction: column;
+  }
 
   & .form-input {
     width: 342px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 100%;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 100%;
+    }
   }
   & .form-button {
     width: 140px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 100%;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 100%;
+    }
   }
 `;
 
@@ -107,13 +95,11 @@ export const Image = styled.img<{ platform: string }>`
   position: relative;
   width: 500px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 310px;
-      height: 200px;
-      border-radius: 23px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 310px;
+    height: 200px;
+    border-radius: 23px;
+  }
 `;
 
 export const IconWrapper = styled.span<{ platform: string }>`
@@ -130,15 +116,13 @@ export const IconWrapper = styled.span<{ platform: string }>`
   top: -36px;
   width: 72px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      padding: 5px;
-      width: 48px;
-      height: 48px;
-      top: -24px;
-      left: 20px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    padding: 5px;
+    width: 48px;
+    height: 48px;
+    top: -24px;
+    left: 20px;
+  }
 `;
 
 export const Container = styled.div<{ platform: string }>`
@@ -146,17 +130,16 @@ export const Container = styled.div<{ platform: string }>`
   gap: 64px;
   align-items: center;
   margin: 64px 0px;
-  background-color: var(--background-200);
+  background-color: ${(props) => props.theme.colors.green[100]};
+
   border-radius: 20px;
   padding: 40px;
   position: relative;
   max-width: 1280px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      flex-direction: column;
-      max-width: 87%;
-      padding: 40px 16px 16px 16px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    flex-direction: column;
+    max-width: 87%;
+    padding: 40px 16px 16px 16px;
+  }
 `;

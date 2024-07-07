@@ -13,11 +13,9 @@ const StyledCarousel = styled.div<{ platform: string }>`
   position: relative;
   width: 1440px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 100%;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 100%;
+  }
 
   & .image-2 {
     height: 700px;
@@ -25,11 +23,9 @@ const StyledCarousel = styled.div<{ platform: string }>`
     position: relative;
     width: 495px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 95%;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 95%;
+    }
   }
 
   & .image-3 {

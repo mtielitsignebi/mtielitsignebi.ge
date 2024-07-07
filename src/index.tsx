@@ -5,18 +5,18 @@ import "@mantine/core/styles.css";
 import "@mantine/tiptap/styles.css";
 import "@mantine/carousel/styles.css";
 import "@mantine/dropzone/styles.css";
-import { createTheme, MantineProvider } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
-const theme = createTheme({
-  // empty
-});
-
 root.render(
   <React.StrictMode>
-    <MantineProvider theme={theme}>
-      <App />
+    <MantineProvider>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </MantineProvider>
   </React.StrictMode>
 );

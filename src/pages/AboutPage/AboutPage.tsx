@@ -8,7 +8,7 @@ import { Layout } from "../../components/Layout";
 
 const StyledAboutPage = styled.div`
   align-items: center;
-  background-color: #6ab271;
+  background-color: ${(props) => props.theme.colors.background};
   flex-direction: column;
   padding: 0px 0px 32px;
   position: relative;

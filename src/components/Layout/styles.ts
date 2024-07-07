@@ -4,5 +4,5 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #6ab271;
+  background-color: ${(props) => props.theme.colors.background};
 `;

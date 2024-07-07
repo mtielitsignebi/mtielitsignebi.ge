@@ -2,7 +2,8 @@ import styled, { css } from "styled-components";
 
 export const StyledEventPage = styled.div<{ platform: string }>`
   align-items: center;
-  background-color: #6ab271;
+  background-color: ${(props) => props.theme.colors.background};
+
   flex-direction: column;
   padding: 0px 0px 32px;
   position: relative;
@@ -24,11 +25,9 @@ export const StyledEventPage = styled.div<{ platform: string }>`
     padding: 64px 0px;
     position: relative;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        padding: 48px 0;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      padding: 48px 0;
+    }
   }
 
   & .heading-get {
@@ -44,12 +43,10 @@ export const StyledEventPage = styled.div<{ platform: string }>`
     white-space: nowrap;
     width: fit-content;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        font-size: var(--title-m-medium-font-size);
-        font-weight: var(--title-m-medium-font-weight);
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      font-size: var(--title-m-medium-font-size);
+      font-weight: var(--title-m-medium-font-weight);
+    }
   }
 
   & .card-instance {

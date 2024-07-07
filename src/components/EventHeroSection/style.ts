@@ -7,12 +7,10 @@ export const Container = styled.div<{ platform: string }>`
   width: 1280px;
   margin-top: 64px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 87%;
-      min-width: 342px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 87%;
+    min-width: 342px;
+  }
 `;
 
 export const Image = styled.img<{ platform: string }>`
@@ -23,11 +21,9 @@ export const Image = styled.img<{ platform: string }>`
   top: 0;
   width: 1280px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 100%;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ScheduleCardInstance = styled(ScheduleCard)<{ platform: string }>`
@@ -35,11 +31,9 @@ export const ScheduleCardInstance = styled(ScheduleCard)<{ platform: string }>`
   position: absolute !important;
   top: 361px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 100%;
-      top: 320px;
-      left: 0;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 100%;
+    top: 320px;
+    left: 0;
+  }
 `;

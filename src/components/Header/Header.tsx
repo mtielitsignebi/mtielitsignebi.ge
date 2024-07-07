@@ -20,6 +20,7 @@ import {
   StyledDrawer,
   DrawerButton,
 } from "./styles";
+import { theme } from "../../theme";
 
 const menuItems = [
   { path: "/home", label: "მთავარი" },
@@ -43,7 +44,7 @@ export const Header = (): JSX.Element => {
   };
 
   return (
-    <StyledHeader platform={platform}>
+    <StyledHeader>
       <LeftSection>
         <Logo
           alt="Logo"
@@ -108,7 +109,7 @@ export const Header = (): JSX.Element => {
         withCloseButton={false}
         styles={{
           body: {
-            backgroundColor: "#6ab271",
+            backgroundColor: theme.colors.background,
             paddingBottom: 48,
           },
         }}
