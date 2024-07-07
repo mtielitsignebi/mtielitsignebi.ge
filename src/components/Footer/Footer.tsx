@@ -1,10 +1,7 @@
-import PropTypes from "prop-types";
-import React from "react";
+import { Button } from "@mantine/core";
 import { Facebookicon } from "../../icons/Facebookicon";
 import { Instagramicon1 } from "../../icons/Instagramicon1";
-import { Button } from "../Button";
 import styled from "styled-components";
-import { usePlatform } from "../../hooks";
 
 const StyledFooter = styled.div`
   align-items: center;
@@ -30,6 +27,7 @@ const StyledFooter = styled.div`
 
   & .button-instance {
     background-color: var(--primitives-white-duplicate) !important;
+    color: #000;
   }
 
   & .design-component-instance-node {
@@ -70,38 +68,25 @@ const StyledFooter = styled.div`
   }
 `;
 
-export const Footer = ({
-  className,
-  logo = "https://c.animaapp.com/9E1pYK5V/img/logo.svg",
-  buttonIcon = <Facebookicon className="facebook-icon" />,
-  override = <Instagramicon1 className="instagram-icon" />,
-}: any): JSX.Element => {
-  const platform = usePlatform();
+export const Footer = (): JSX.Element => {
   return (
-    <StyledFooter className={`footer ${className}`}>
-      <img className="logo-2" alt="Logo" src={logo} />
+    <StyledFooter className="footer">
+      <img
+        className="logo-2"
+        alt="Logo"
+        src={"https://c.animaapp.com/9E1pYK5V/img/logo.svg"}
+      />
       <div className="actions-2">
-        <Button
-          className="button-instance"
-          divClassName="design-component-instance-node"
-          override={buttonIcon}
-          style="default"
-          text="Facebook"
-        />
-        <Button
-          className="button-instance"
-          divClassName="button-2"
-          override={override}
-          style="default"
-          text="Instagram"
-        />
+        <Button className="button-instance">
+          <Facebookicon className="facebook-icon" />
+          <p>Facebook</p>
+        </Button>
+        <Button className="button-instance">
+          <Instagramicon1 className="instagram-icon" />
+          <p>Instagram</p>
+        </Button>
       </div>
       <p className="copy">© 2023 ყველა უფლება დაცულია.</p>
     </StyledFooter>
   );
-};
-
-Footer.propTypes = {
-  platform: PropTypes.oneOf(["web"]),
-  logo: PropTypes.string,
 };

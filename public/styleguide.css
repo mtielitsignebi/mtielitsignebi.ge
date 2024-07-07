@@ -1,8 +1,6 @@
 :root {
   --accent: rgba(24, 81, 182, 1);
   --background-100: rgba(184, 217, 172, 1);
-  --background-200: rgba(120, 208, 128, 1);
-  --background-300: rgba(106, 178, 113, 1);
   --body-m-regular-font-family: "Noto Serif Georgian", Helvetica;
   --body-m-regular-font-size: 16px;
   --body-m-regular-font-style: normal;
@@ -57,7 +55,6 @@
   --primitives-bg-100: rgba(184, 217, 172, 1);
   --primitives-bg-100-duplicate: rgba(184, 217, 172, 1);
   --primitives-bg-200: rgba(120, 208, 128, 1);
-  --primitives-bg-200-duplicate: rgba(120, 208, 128, 1);
   --primitives-bg-300: rgba(106, 178, 113, 1);
   --primitives-text: rgba(0, 13, 56, 1);
   --primitives-text-duplicate: rgba(0, 13, 56, 1);

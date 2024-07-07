@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Container = styled.svg`
   & .path {
-    stroke: #6ab271;
+    stroke: ${(props) => props.theme.colors.background};
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 1.66667;

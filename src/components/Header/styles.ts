@@ -1,24 +1,22 @@
 import styled, { css } from "styled-components";
 import { Burger, Button, Drawer, Group } from "@mantine/core";
 
-export const StyledHeader = styled.header<{ platform: string }>`
+export const StyledHeader = styled.header`
   height: 64px;
   padding: 36px 140px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #6ab271;
+  background-color: ${(props) => props.theme.colors.background};
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--primitives-bg-100-duplicate);
   position: fixed;
   width: 100%;
   z-index: 1000;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      padding: 36px 24px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    padding: 36px 24px;
+  }
 `;
 
 export const Logo = styled.img`
@@ -50,7 +48,7 @@ export const MobileMenuButton = styled(Burger)`
 
 export const StyledDrawer = styled(Drawer)`
   .mantine-Drawer-root {
-    background-color: #6ab271;
+    background-color: ${(props) => props.theme.colors.background};
     color: var(--text);
     margin-bottom: 200px;
     z-index: 2000;

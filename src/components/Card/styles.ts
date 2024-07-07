@@ -10,7 +10,7 @@ export const StyledCard = styled.div<{ platform: string }>`
 
   & .div-2 {
     align-items: flex-start;
-    background-color: var(--background-200);
+    background-color: ${(props) => props.theme.colors.green[100]};
     border-radius: 20px;
     display: flex;
     flex: 0 0 auto;
@@ -23,12 +23,10 @@ export const StyledCard = styled.div<{ platform: string }>`
       cursor: pointer;
     }
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 100%;
-        padding: 40px 16px;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 100%;
+      padding: 40px 16px;
+    }
   }
 
   & .content {
@@ -40,13 +38,11 @@ export const StyledCard = styled.div<{ platform: string }>`
     position: relative;
     width: 1200px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        flex-direction: column;
-        width: 87%;
-        gap: 24px;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      flex-direction: column;
+      width: 87%;
+      gap: 24px;
+    }
   }
 
   & .txt {
@@ -81,11 +77,9 @@ export const StyledCard = styled.div<{ platform: string }>`
     white-space: nowrap;
     width: fit-content;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        font-size: var(--headline-s-font-size);
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      font-size: var(--headline-s-font-size);
+    }
   }
 
   & .date {
@@ -120,13 +114,11 @@ export const StyledCard = styled.div<{ platform: string }>`
     position: relative;
     width: 500px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 310px;
-        height: 200px;
-        border-radius: 12px;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 310px;
+      height: 200px;
+      border-radius: 12px;
+    }
   }
 
   & .icon {
@@ -143,16 +135,14 @@ export const StyledCard = styled.div<{ platform: string }>`
     top: -36px;
     width: 72px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 48px;
-        height: 48px;
-        border-radius: 100%;
-        padding: 10px;
-        top: -24px;
-        left: 20px;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 48px;
+      height: 48px;
+      border-radius: 100%;
+      padding: 10px;
+      top: -24px;
+      left: 20px;
+    }
   }
 
   & .hands-icon {

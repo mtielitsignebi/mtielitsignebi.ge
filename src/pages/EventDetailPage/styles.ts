@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  background-color: var(--background-300);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,12 +14,10 @@ export const Article = styled.article<{ platform: string }>`
   margin-bottom: 40px;
   width: 800px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 87%;
-      margin: auto;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 87%;
+    margin: auto;
+  }
 `;
 
 export const Heading = styled.h2<{ platform: string }>`
@@ -35,17 +32,15 @@ export const Heading = styled.h2<{ platform: string }>`
   margin-top: 50px;
   position: relative;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      margin-top: 170px;
-      font-family: var(--title-m-font-family);
-      font-size: var(--title-m-font-size);
-      font-style: var(--title-m-font-style);
-      font-weight: var(--title-m-font-weight);
-      letter-spacing: var(--title-m-letter-spacing);
-      line-height: var(--title-m-line-height);
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    margin-top: 170px;
+    font-family: var(--title-m-font-family);
+    font-size: var(--title-m-font-size);
+    font-style: var(--title-m-font-style);
+    font-weight: var(--title-m-font-weight);
+    letter-spacing: var(--title-m-letter-spacing);
+    line-height: var(--title-m-line-height);
+  }
 `;
 
 export const SubHeading = styled.h3<{ platform: string }>`
@@ -61,16 +56,14 @@ export const SubHeading = styled.h3<{ platform: string }>`
   margin-bottom: 20px;
   position: relative;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      font-family: var(--title-s-font-family);
-      font-size: var(--title-s-font-size);
-      font-style: var(--title-s-font-style);
-      font-weight: var(--title-s-font-weight);
-      letter-spacing: var(--title-s-letter-spacing);
-      line-height: var(--title-s-line-height);
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    font-family: var(--title-s-font-family);
+    font-size: var(--title-s-font-size);
+    font-style: var(--title-s-font-style);
+    font-weight: var(--title-s-font-weight);
+    letter-spacing: var(--title-s-letter-spacing);
+    line-height: var(--title-s-line-height);
+  }
 `;
 
 export const Paragraph = styled.p<{ platform: string }>`
@@ -85,14 +78,12 @@ export const Paragraph = styled.p<{ platform: string }>`
   margin-top: 8px;
   position: relative;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      font-family: var(--body-s-regular-font-family);
-      font-size: var(--body-s-regular-font-size);
-      font-style: var(--body-s-regular-font-style);
-      font-weight: var(--body-s-regular-font-weight);
-      letter-spacing: var(--body-s-regular-letter-spacing);
-      line-height: var(--body-s-regular-line-height);
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    font-family: var(--body-s-regular-font-family);
+    font-size: var(--body-s-regular-font-size);
+    font-style: var(--body-s-regular-font-style);
+    font-weight: var(--body-s-regular-font-weight);
+    letter-spacing: var(--body-s-regular-letter-spacing);
+    line-height: var(--body-s-regular-line-height);
+  }
 `;

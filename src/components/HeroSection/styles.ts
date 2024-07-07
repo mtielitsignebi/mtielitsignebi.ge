@@ -10,11 +10,9 @@ export const HeroSectionWrapper = styled.div<{ platform: string }>`
   position: relative;
   overflow: hidden;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      padding: 32px 0px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    padding: 32px 0px;
+  }
 `;
 
 export const HeroContent = styled.div<{ platform: string }>`
@@ -48,11 +46,9 @@ export const Heading = styled.p<{ platform: string }>`
   width: 100%;
   max-width: 1294px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      font-size: var(--headline-m-font-size);
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    font-size: var(--headline-m-font-size);
+  }
 `;
 
 export const VideoWrapper = styled.div<{ platform: string }>`
@@ -62,12 +58,10 @@ export const VideoWrapper = styled.div<{ platform: string }>`
   border-radius: 24px;
   overflow: hidden;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 90%;
-      max-width: 600px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 90%;
+    max-width: 600px;
+  }
 
   .video-js {
     display: block !important;
@@ -76,11 +70,9 @@ export const VideoWrapper = styled.div<{ platform: string }>`
   .vjs-big-play-button {
     cursor: pointer;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 24px;
-        height: 24px;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 24px;
+      height: 24px;
+    }
   }
 `;

@@ -7,7 +7,7 @@ interface Props {
 
 const StyledHandsicon = styled.svg`
   & .path {
-    stroke: #6ab271;
+    stroke: ${(props) => props.theme.colors.background};
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2.50441;

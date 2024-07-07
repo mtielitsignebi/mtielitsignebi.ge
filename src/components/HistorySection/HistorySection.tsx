@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
-import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { usePlatform } from "../../hooks";
-import { platform } from "os";
 
 const StyledHistorySection = styled.div<{ platform: string }>`
   align-items: center;
@@ -12,14 +10,12 @@ const StyledHistorySection = styled.div<{ platform: string }>`
   position: relative;
   width: 1280px;
 
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 100%;
-      padding: 0;
-      flex-direction: column;
-      gap: 24px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+    gap: 24px;
+  }
 
   & .image {
     height: ${({ platform }) => (platform === "web" ? "700px" : "500px")};
@@ -34,7 +30,7 @@ const StyledHistorySection = styled.div<{ platform: string }>`
     flex-direction: column;
     gap: 24px;
     position: relative;
-    width: ${({ platform }) => (platform === "web" ? "700px" : "342px")}
+    width: ${({ platform }) => (platform === "web" ? "700px" : "342px")};
   }
 
   & .title {

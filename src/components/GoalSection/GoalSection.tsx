@@ -1,19 +1,16 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { Button } from "../Button";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { usePlatform } from "../../hooks";
+import { Button } from "@mantine/core";
+import { theme } from "../../theme";
 
-const StyledGoalSection = styled.div<{ platform: string }>`
+const StyledGoalSection = styled.div`
   height: 702px;
   position: relative;
   width: 1280px;
-  
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      width: 390px;
-    `}
+
+  ${(props) => props.theme.platform.mobile} {
+    width: 390px;
+  }
 
   & .overlap-group {
     height: 547px;
@@ -23,7 +20,7 @@ const StyledGoalSection = styled.div<{ platform: string }>`
 
   & .goal {
     align-items: center;
-    background-color: var(--primitives-bg-200-duplicate);
+    background-color: ${(props) => props.theme.colors.green[100]};
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -34,11 +31,9 @@ const StyledGoalSection = styled.div<{ platform: string }>`
     top: 127px;
     width: 1280px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 342px;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 342px;
+    }
   }
 
   & .heading-our {
@@ -67,11 +62,9 @@ const StyledGoalSection = styled.div<{ platform: string }>`
     text-align: center;
     width: 920px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 310px;
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 310px;
+    }
   }
 
   & .img {
@@ -81,20 +74,18 @@ const StyledGoalSection = styled.div<{ platform: string }>`
     top: 0;
     width: 200px;
 
-    ${({ platform }) =>
-      platform !== "web" &&
-      css`
-        width: 180px;
-        height: 155px;
-        left: 81px; 
-      `}
+    ${(props) => props.theme.platform.mobile} {
+      width: 180px;
+      height: 155px;
+      left: 81px;
+    }
   }
 `;
 
 export const GoalSection = (): JSX.Element => {
   const platform = usePlatform();
   return (
-    <StyledGoalSection platform={platform}>
+    <StyledGoalSection>
       <div className="overlap-group">
         <div className="goal">
           <div className="heading-our">ჩვენი მიზანი</div>
@@ -105,7 +96,9 @@ export const GoalSection = (): JSX.Element => {
             გვინდა შევმატოთ წიგნები მცირე კონტიგენტიანი სკოლის ბიბლიოთეკებსაც და
             სრულად მოვიცვათ საქართველოს მთიანი რეგიონები და მიმდებარე სოფლები.
           </p>
-          <Button icon={false} style="default" text="დონაცია" />
+          <Button size="md" color={theme.colors.blue[400]}>
+            დონაცია
+          </Button>
         </div>
         <img
           className="img"
@@ -115,8 +108,4 @@ export const GoalSection = (): JSX.Element => {
       </div>
     </StyledGoalSection>
   );
-};
-
-GoalSection.propTypes = {
-  platform: PropTypes.oneOf(["web"]),
 };
