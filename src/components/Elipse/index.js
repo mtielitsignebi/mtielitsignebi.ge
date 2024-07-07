@@ -1,1 +1,0 @@
-export { Elipse } from "./Elipse";

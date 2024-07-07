@@ -48,15 +48,6 @@ export const MobileMenuButton = styled(Burger)`
   margin-left: auto;
 `;
 
-export const Actions = styled(Group)<{ platform: string }>`
-  gap: 32px;
-  ${({ platform }) =>
-    platform !== "web" &&
-    css`
-      display: none;
-    `}
-`;
-
 export const StyledDrawer = styled(Drawer)`
   .mantine-Drawer-root {
     background-color: #6ab271;
