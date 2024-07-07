@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Container = styled.svg`
+const Container = styled.svg`
   & .path {
     stroke: #6ab271;
     stroke-linecap: round;
