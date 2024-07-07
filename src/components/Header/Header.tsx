@@ -4,7 +4,7 @@ import {
   Center,
   Divider,
   Drawer,
-  Group,
+  SegmentedControl,
   Space,
   Text,
 } from "@mantine/core";
@@ -17,15 +17,14 @@ import {
   CenterSection,
   RightSection,
   MobileMenuButton,
-  StyledDrawer,
-  DrawerButton,
 } from "./styles";
 import { theme } from "../../theme";
+import { useTranslation } from "react-i18next";
 
 const menuItems = [
-  { path: "/home", label: "მთავარი" },
-  { path: "/about", label: "ჩვენ შესახებ" },
-  { path: "/events", label: "სიახლეები" },
+  { path: "/home", labelKey: "menu.home" },
+  { path: "/about", labelKey: "menu.about" },
+  { path: "/events", labelKey: "menu.events" },
 ];
 
 export const Header = (): JSX.Element => {
@@ -33,6 +32,7 @@ export const Header = (): JSX.Element => {
   const navigate = useNavigate();
   const location = useLocation();
   const platform = usePlatform();
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -41,6 +41,12 @@ export const Header = (): JSX.Element => {
   const reloadPage = () => {
     window.scrollTo(0, 0);
     window.location.reload();
+  };
+
+  const handleLanguageChange = (value: string | null) => {
+    if (value) {
+      i18n.changeLanguage(value);
+    }
   };
 
   return (
@@ -72,12 +78,24 @@ export const Header = (): JSX.Element => {
                   },
                 }}
               >
-                {item.label}
+                {t(item.labelKey)}
               </Button>
             ))}
           </CenterSection>
 
           <RightSection>
+            <SegmentedControl
+              style={{ background: "transparent" }}
+              size="sm"
+              color={theme.colors.green[200]}
+              value={i18n.language}
+              onChange={handleLanguageChange}
+              data={[
+                { value: "ka", label: "GEO" },
+                { value: "en", label: "ENG" },
+              ]}
+            />
+
             <Button
               variant="filled"
               onClick={() => navigate(`/donate`)}
@@ -143,7 +161,7 @@ export const Header = (): JSX.Element => {
                 },
               }}
             >
-              {item.label}
+              {t(item.labelKey)}
             </Button>
 
             <Divider color="#78D080" mt="sm" />
@@ -151,6 +169,20 @@ export const Header = (): JSX.Element => {
         ))}
 
         <Space h="lg" />
+        <Center>
+          <SegmentedControl
+            style={{ background: "transparent" }}
+            size="sm"
+            color={theme.colors.green[200]}
+            value={i18n.language}
+            onChange={handleLanguageChange}
+            data={[
+              { value: "ka", label: "GEO" },
+              { value: "en", label: "ENG" },
+            ]}
+          />
+        </Center>
+
         <Button
           fullWidth
           variant="filled"
