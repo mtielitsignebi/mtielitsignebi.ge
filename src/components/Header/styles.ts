@@ -34,6 +34,7 @@ export const CenterSection = styled(Group)`
   flex-grow: 1;
   justify-content: center;
   gap: 20px;
+  margin-right: -200px;
 `;
 
 export const RightSection = styled(Group)`

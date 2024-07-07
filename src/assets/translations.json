@@ -1,0 +1,18 @@
+{
+  "en": {
+    "welcome": "Welcome",
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "events": "News"
+    }
+  },
+  "ka": {
+    "welcome": "მოგესალმებით",
+    "menu": {
+      "home": "მთავარი",
+      "about": "ჩვენ შესახებ",
+      "events": "სიახლეები"
+    }
+  }
+}
