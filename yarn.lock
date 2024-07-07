@@ -12,6 +12,11 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
+"@alsandre/responsive-image-carousel@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@alsandre/responsive-image-carousel/-/responsive-image-carousel-0.1.10.tgz#af9f07c761ab8fe9803dc846b396f7e32d0a01eb"
+  integrity sha512-Jmvsf0211+e7YRQ4oWQogjJH3YJSPHN5GA9HsNcCU1D0Ef47ybXxB+UfNgnzfMdBGq0Gyom/JEJi9Maf3CtQvw==
+
 "@ampproject/remapping@^2.2.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.3.0.tgz#ed441b6fa600072520ce18b43d2c8cc8caecc7f4"
