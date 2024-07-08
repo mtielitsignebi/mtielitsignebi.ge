@@ -77,9 +77,3 @@ export const Button = ({
     </StyledButton>
   );
 };
-
-Button.propTypes = {
-  text: PropTypes.string,
-  icon: PropTypes.bool,
-  style: PropTypes.oneOf(["ghost", "default", "outline"]),
-};
