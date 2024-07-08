@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import * as S from "./styles";
+import * as SC from "./styles";
 import { Container } from "@mantine/core";
 
 interface LayoutProps {
@@ -10,12 +10,12 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <S.Wrapper>
+    <SC.Wrapper>
       <Header />
       <Container fluid mt="64px" px={0}>
         {children}
       </Container>
       <Footer />
-    </S.Wrapper>
+    </SC.Wrapper>
   );
 };
