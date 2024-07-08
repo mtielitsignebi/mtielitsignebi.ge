@@ -1,8 +1,10 @@
 //@ts-nocheck
 import styled from "styled-components";
+
 const Container = styled.svg`
-    width: 400px;
+  width: 400px;
   ${(props) => props.theme.platform.mobile} {
+    width: 200px; 
   }
 `;
 export const IconError = (): JSX.Element => {
