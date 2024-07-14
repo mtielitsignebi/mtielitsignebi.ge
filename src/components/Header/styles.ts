@@ -3,25 +3,30 @@ import { Burger, Button, Drawer, Group } from "@mantine/core";
 
 export const StyledHeader = styled.header`
   height: 64px;
-  padding: 36px 140px;
+  padding: 48px 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: ${(props) => props.theme.colors.background};
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--primitives-bg-100-duplicate);
-  position: fixed;
   width: 100%;
+  min-width: 1100px;
   z-index: 1000;
 
   ${(props) => props.theme.platform.mobile} {
     padding: 36px 24px;
+    min-width: 300px;
   }
 `;
 
 export const Logo = styled.img`
   height: 64px;
   cursor: pointer;
+
+  ${(props) => props.theme.platform.mobile} {
+    height: 48px;
+  }
 `;
 
 export const LeftSection = styled.div`
@@ -60,13 +65,40 @@ export const StyledDrawer = styled(Drawer)`
   }
 `;
 
-export const DrawerButton = styled(Button)<any>`
+export const DrawerButton = styled(Button)`
   margin-bottom: 10px;
+  background-color: var(--background-100);
+  color: var(--text);
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  &:hover {
+    background-color: var(--background-100);
+    color: var(--button-bg-hover);
+  }
+
+  & .mantine-Button-label {
+    color: var(--text);
+    font-family: var(--body-m-regular-font-family);
+    font-size: var(--body-m-regular-font-size);
+    font-style: var(--body-m-regular-font-style);
+    font-weight: var(--body-m-regular-font-weight);
+    letter-spacing: var(--body-m-regular-letter-spacing);
+    line-height: var(--body-m-regular-line-height);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 
   &.mantine-Button-root {
     background-color: var(--background-100);
     color: var(--text);
     border: none;
+    outline: none;
+    box-shadow: none;
 
     &:hover {
       background-color: var(--background-100);

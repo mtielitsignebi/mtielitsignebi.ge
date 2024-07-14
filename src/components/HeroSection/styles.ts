@@ -1,20 +1,19 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-export const HeroSectionWrapper = styled.div<{ platform: string }>`
+export const HeroSectionWrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 64px 0px;
-  position: relative;
   overflow: hidden;
+  padding: 0;
 
   ${(props) => props.theme.platform.mobile} {
-    padding: 0px 0px;
+    padding: 0;
   }
 `;
 
-export const HeroContent = styled.div<{ platform: string }>`
+export const HeroContent = styled.div`
   align-items: center;
   display: flex;
   flex: 0 0 auto;
@@ -22,18 +21,15 @@ export const HeroContent = styled.div<{ platform: string }>`
   margin-top: 40px;
   gap: 20px;
   justify-content: center;
-  padding: 0px 20px;
-  position: relative;
+  padding: 0 20px;
   z-index: 2;
 
-  ${({ platform }) =>
-    platform === "web" &&
-    css`
-      padding: 0px 80px;
-    `}
+  ${(props) => props.theme.platform.mobile} {
+    padding: 0 24px;
+  }
 `;
 
-export const Heading = styled.p<{ platform: string }>`
+export const Heading = styled.p`
   color: #000;
   font-family: var(--headline-l-font-family);
   font-size: var(--headline-l-font-size);
@@ -42,27 +38,25 @@ export const Heading = styled.p<{ platform: string }>`
   letter-spacing: var(--headline-l-letter-spacing);
   line-height: var(--headline-l-line-height);
   text-align: center;
-  margin: 0;
   width: 100%;
-  max-width: 1294px;
 
   ${(props) => props.theme.platform.mobile} {
     font-size: var(--headline-m-font-size);
+    margin: 10px 24px;
+    object-fit: cover;
   }
 `;
 
-export const VideoWrapper = styled.div<{ platform: string }>`
+export const VideoWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 24px;
   overflow: hidden;
 
   ${(props) => props.theme.platform.mobile} {
-    border-radius: 0px;
-    width: 100%;
-    height: 500px;
-    max-width: 100vw;
-    aspect-ratio: 4 / 3; /* Tall aspect ratio for mobile */
+    border-radius: 24px;
+    height: 80%;
+    margin: 0px 24px !important;
   }
 
   .video-js {

@@ -8,11 +8,8 @@ import {
   Heading,
   VideoWrapper,
 } from "./styles";
-import { usePlatform } from "../../hooks";
 
 export const HeroSection = () => {
-  const platform = usePlatform();
-
   useEffect(() => {
     const videoElement = document.getElementById("my-video");
     if (videoElement) {
@@ -36,8 +33,8 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <HeroSectionWrapper platform={platform} className="hero-section">
-      <VideoWrapper platform={platform}>
+    <HeroSectionWrapper className="hero-section">
+      <VideoWrapper>
         <video
           id="my-video"
           className="video-js vjs-big-play-centered"
@@ -46,8 +43,8 @@ export const HeroSection = () => {
         />
       </VideoWrapper>
 
-      <HeroContent platform={platform} className="hero">
-        <Heading platform={platform} className="heading">
+      <HeroContent className="hero">
+        <Heading className="heading">
           ჩვენი მიზანია, შევიძინოთ, შევაგროვოთ საინტერესო და სასურველი
           ლიტერატურა მთიელი მოზარდებისათვის.
         </Heading>

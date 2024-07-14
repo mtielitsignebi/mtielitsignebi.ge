@@ -11,7 +11,7 @@ export const StyledGoalSection = styled.div`
   margin: 0 auto;
 
   ${(props) => props.theme.platform.mobile} {
-    width: 100vw;
+    width: 100%;
   }
 `;
 
