@@ -5,7 +5,7 @@ import { HeroSection } from "../../components/HeroSection";
 import { HistorySection } from "../../components/HistorySection";
 import { Layout } from "../../components/Layout";
 import { Container } from "./styles";
-import { Divider } from "../../icons/Divider";
+import { Divider } from "../../components/Divider";
 
 export const HomePage = (): JSX.Element => {
   return (

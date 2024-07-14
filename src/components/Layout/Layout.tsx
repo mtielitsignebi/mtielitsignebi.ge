@@ -11,11 +11,19 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <SC.Wrapper>
-      <Header />
-      <Container fluid mt="64px" px={0}>
-        {children}
-      </Container>
-      <Footer />
+      <SC.HeaderWrapper>
+        <Header />
+      </SC.HeaderWrapper>
+
+      <SC.MainContainer>
+        <SC.Content>
+          <Container fluid px={0}>
+            {children}
+          </Container>
+        </SC.Content>
+
+        <Footer />
+      </SC.MainContainer>
     </SC.Wrapper>
   );
 };

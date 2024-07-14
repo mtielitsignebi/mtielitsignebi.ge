@@ -1,6 +1,6 @@
 import React from "react";
 import { EventHeroSection } from "../../components/EventHeroSection";
-import { Divider } from "../../icons/Divider";
+import { Divider } from "../../components/Divider";
 import { Layout } from "../../components/Layout";
 import * as SC from "./styles";
 import { SubscribeCard } from "../../components/SubscribeSection";

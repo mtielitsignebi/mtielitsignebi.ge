@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "../../icons/Divider";
+import { Divider } from "../../components/Divider";
 import { Layout } from "../../components/Layout";
 import * as SC from "./styles";
 import { PartnerCard } from "../../components/PartnerCard";
