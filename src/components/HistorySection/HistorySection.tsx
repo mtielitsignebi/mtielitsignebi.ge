@@ -20,7 +20,6 @@ const StyledHistorySection = styled.div<{ platform: string }>`
   & .image {
     height: ${({ platform }) => (platform === "web" ? "700px" : "500px")};
     position: relative;
-    width: ${({ platform }) => (platform === "web" ? "500px" : "342px")};
   }
 
   & .frame {

@@ -22,17 +22,3 @@ export const Actions = styled.div`
   gap: 32px 16px;
   justify-content: center;
 `;
-
-export const Copy = styled.p`
-  color: var(--text);
-  font-family: var(--body-m-regular-font-family);
-  font-size: var(--body-m-regular-font-size);
-  font-style: var(--body-m-regular-font-style);
-  font-weight: var(--body-m-regular-font-weight);
-  letter-spacing: var(--body-m-regular-letter-spacing);
-  line-height: var(--body-m-regular-line-height);
-  position: relative;
-  text-align: center;
-  white-space: nowrap;
-  width: fit-content;
-`;

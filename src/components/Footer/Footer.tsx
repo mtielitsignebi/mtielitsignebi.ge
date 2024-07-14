@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Logo, Actions, Copy } from "./styles";
+import { Container, Logo, Actions } from "./styles";
 import { IconFacebook, IconInstagram } from "../../icons";
-import { Button } from "@mantine/core";
+import { Button, Center, Text } from "@mantine/core";
 
 export const Footer = (): JSX.Element => {
   return (
@@ -26,7 +26,10 @@ export const Footer = (): JSX.Element => {
           Instagram
         </Button>
       </Actions>
-      <Copy>© 2023 ყველა უფლება დაცულია.</Copy>
+
+      <Center mt="xs">
+        <Text size="sm">© 2022-2024 ყველა უფლება დაცულია.</Text>
+      </Center>
     </Container>
   );
 };
