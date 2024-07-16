@@ -5,7 +5,7 @@ import { HeroSection } from "../../components/HeroSection";
 import { HistorySection } from "../../components/HistorySection";
 import { Layout } from "../../components/Layout";
 import { Container, StyledCarousel } from "./styles";
-import { Divider } from "../../icons/Divider";
+import { Divider } from "../../components/Divider";
 import { usePlatform } from "../../hooks";
 import { Platform } from "../../hooks/usePlatform";
 import { useControlXState } from "@etlyn/control-x";

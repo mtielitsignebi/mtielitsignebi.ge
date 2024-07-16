@@ -1,29 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-
-interface Props {
-  className: any;
-}
-
-const StyledInstagramicon1 = styled.svg`
-  & .path {
-    stroke: #000d38;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2.25;
-  }
-
-`;
-
-export const Instagramicon1 = ({ className }: Props): JSX.Element => {
+export const IconInstagram = () => {
   return (
-    <StyledInstagramicon1
-      className={`instagramicon-1 ${className}`}
+    <svg
       fill="none"
+      stroke="#000d38"
       height="24"
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.7"
     >
       <path
         className="path"
@@ -37,6 +23,6 @@ export const Instagramicon1 = ({ className }: Props): JSX.Element => {
         className="path"
         d="M16.875 8.625C17.7034 8.625 18.375 7.95343 18.375 7.125C18.375 6.29657 17.7034 5.625 16.875 5.625C16.0466 5.625 15.375 6.29657 15.375 7.125C15.375 7.95343 16.0466 8.625 16.875 8.625Z"
       />
-    </StyledInstagramicon1>
+    </svg>
   );
 };

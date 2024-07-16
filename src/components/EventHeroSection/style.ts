@@ -5,10 +5,9 @@ export const Container = styled.div<{ platform: string }>`
   height: 486px;
   position: relative;
   width: 1280px;
-  margin-top: 64px;
 
   ${(props) => props.theme.platform.mobile} {
-    width: 87%;
+    width: 100%;
     min-width: 342px;
   }
 `;
@@ -23,6 +22,7 @@ export const Image = styled.img<{ platform: string }>`
 
   ${(props) => props.theme.platform.mobile} {
     width: 100%;
+    border-radius: 24px;
   }
 `;
 
