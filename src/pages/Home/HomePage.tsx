@@ -11,16 +11,10 @@ import { Platform } from "../../hooks/usePlatform";
 import { useControlXState } from "@etlyn/control-x";
 
 export const HomePage = (): JSX.Element => {
-  const IMAGE_LIST = [
-    { imageURL: "https://picsum.photos/800/400?random=1" },
-    { imageURL: "https://picsum.photos/800/400?random=2" },
-    { imageURL: "https://picsum.photos/800/400?random=3" },
-    { imageURL: "https://picsum.photos/800/400?random=4" },
-    { imageURL: "https://picsum.photos/800/400?random=5" },
-    { imageURL: "https://picsum.photos/800/400?random=6" },
-    { imageURL: "https://picsum.photos/800/400?random=7" },
-  ];
+//@ts-ignore
+  const IMAGE_LIST = useControlXState("gallery-core").images.map(image => ({imageURL: image.url}))
   const platform = usePlatform();
+  console.log(IMAGE_LIST)
   return (
     <Layout>
       <Container>
@@ -33,6 +27,8 @@ export const HomePage = (): JSX.Element => {
           showSingleSlide={platform !== Platform.Web}
           imageList={IMAGE_LIST}
           platform={platform}
+          allChildClass="children"
+          allImageClass="images"
         />
       </Container>
     </Layout>

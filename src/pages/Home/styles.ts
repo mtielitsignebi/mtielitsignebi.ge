@@ -16,9 +16,17 @@ export const StyledCarousel = styled(AutoCarousel)<{ platform: string }>`
   height: 828px !important;
   gap: 40px;
 
+  ${(props) => props.theme.platform.mobile} {
+    width: 100% !important;
+    height: 696px !important;
+  }
   & .children {
     width: 650px;
     height: 700px;
+    ${(props) => props.theme.platform.mobile} {
+      width: 100%;
+      height: 600px !important;
+    }
   }
   & .images {
     object-fit: cover;
