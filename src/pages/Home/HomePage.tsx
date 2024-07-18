@@ -14,7 +14,6 @@ export const HomePage = (): JSX.Element => {
 //@ts-ignore
   const IMAGE_LIST = useControlXState("gallery-core").images.map(image => ({imageURL: image.url}))
   const platform = usePlatform();
-  console.log(IMAGE_LIST)
   return (
     <Layout>
       <Container>
