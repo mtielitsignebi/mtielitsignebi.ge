@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@alsandre/responsive-image-carousel": "^0.1.13",
-    "@etlyn/control-x": "0.0.17",
+    "@etlyn/control-x": "0.0.23",
     "framer-motion": "^10.12.18",
     "i18next": "^23.11.5",
     "react": "^18.2.0",
