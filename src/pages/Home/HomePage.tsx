@@ -1,5 +1,4 @@
 import React from "react";
-import { Carousel } from "../../components/Carousel";
 import { GoalSection } from "../../components/GoalSection";
 import { HeroSection } from "../../components/HeroSection";
 import { HistorySection } from "../../components/HistorySection";
@@ -11,8 +10,8 @@ import { Platform } from "../../hooks/usePlatform";
 import { useControlXState } from "@etlyn/control-x";
 
 export const HomePage = (): JSX.Element => {
-//@ts-ignore
-  const IMAGE_LIST = useControlXState("gallery-core").images.map(image => ({imageURL: image.url}))
+  //@ts-ignore
+  const IMAGE_LIST = useControlXState("gallery-core").images.map((image) => ({imageURL: image.url,}));
   const platform = usePlatform();
   return (
     <Layout>
@@ -23,12 +22,20 @@ export const HomePage = (): JSX.Element => {
         <Divider />
         <GoalSection />
         <StyledCarousel
-          showSingleSlide={platform !== Platform.Web}
-          imageList={IMAGE_LIST}
+          slidesPerScreen={platform === Platform.Web ? 3 : 1}
           platform={platform}
-          allChildClass="children"
-          allImageClass="images"
-        />
+          className="children"
+          imageClass="images"
+          slideAnimation="animate"
+          controls={true}
+          sliderSpeed={4000}
+        >
+          {IMAGE_LIST.map((image, i) => (
+            <div className="slide-wrapper" key={image.imageURL + i}>
+              <img className="slide-image" src={image.imageURL} />
+            </div>
+          ))}
+        </StyledCarousel>
       </Container>
     </Layout>
   );
