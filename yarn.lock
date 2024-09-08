@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@alsandre/responsive-image-carousel@^0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@alsandre/responsive-image-carousel/-/responsive-image-carousel-0.1.13.tgz#ff6eac20080cce380675c1293cb26ff49835b80c"
-  integrity sha512-ro7XrNoRcWRbSi9euAodGGlIvPFJQqNssl8mkfU2BMCmcE1jdDYDQuH8WPOFftY30XbKiGLRENDim6MbKHMh/w==
+"@alsandre/responsive-image-carousel@^0.1.25":
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/@alsandre/responsive-image-carousel/-/responsive-image-carousel-0.1.25.tgz#cd2cbb0f3108eeb931381ca8eb68400106d1f7da"
+  integrity sha512-p48Zja7sAftsdkf3/afzYMRByXo11zl6uEhfL6ay1RW0U/NxwfUiqgrN0r4UL03k2etKm/L3NYXCKqLaokxqXQ==
 
 "@ampproject/remapping@^2.2.0":
   version "2.3.0"
